@@ -1,0 +1,433 @@
+<resources>
+    <string name="app_name">Appiary</string>
+
+    <string name="nav_today">Heute</string>
+    <string name="nav_apiaries">Bienenstände</string>
+    <string name="nav_hives">Völker</string>
+    <string name="nav_tasks">Aufgaben</string>
+    <string name="nav_settings">Einstellungen</string>
+
+    <string name="quick_add">Schnell erfassen</string>
+    <string name="quick_add_title">Eintrag erfassen</string>
+    <string name="fab_log">Erfassen</string>
+    <string name="qa_inspection">Durchsicht</string>
+    <string name="qa_feeding">Fütterung</string>
+    <string name="qa_mite">Varroakontrolle</string>
+    <string name="qa_treatment">Behandlung</string>
+    <string name="qa_harvest">Ernte</string>
+    <string name="qa_note">Notiz / Foto</string>
+
+    <string name="action_save">Speichern</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_add">Hinzufügen</string>
+    <string name="action_back">Zurück</string>
+    <string name="action_more">Mehr</string>
+    <string name="action_done">Als erledigt markieren</string>
+    <string name="action_snooze">3 Tage später</string>
+    <string name="action_dismiss">Verwerfen</string>
+    <string name="tap_for_why">Für Begründung tippen</string>
+
+    <string name="bucket_do_now">Jetzt erledigen</string>
+    <string name="bucket_due_soon">Bald fällig</string>
+    <string name="bucket_watchlist">Beobachten</string>
+    <string name="bucket_healthy">In Ordnung</string>
+
+    <string name="today_empty_title">Nichts zu tun</string>
+    <string name="today_empty_subtitle">Keine offenen Aufgaben in dieser Ansicht. Deine Völker wirken stabil.</string>
+    <string name="filter_all_apiaries">Alle Bienenstände</string>
+    <string name="filter_all">Alle</string>
+
+    <string name="apiaries_empty_title">Noch keine Bienenstände</string>
+    <string name="apiaries_empty_subtitle">Tippe auf +, um deinen ersten Bienenstand anzulegen.</string>
+    <string name="add_apiary">Bienenstand hinzufügen</string>
+    <string name="new_apiary">Neuer Bienenstand</string>
+    <string name="apiary_name">Name des Bienenstands</string>
+    <string name="add_hive">Volk hinzufügen</string>
+    <string name="new_hive">Neues Volk</string>
+    <string name="hive_name_label">Name oder Nummer des Volks</string>
+    <string name="start_inspection_round">Durchsicht-Runde starten</string>
+    <string name="section_needs_attention">Handlungsbedarf</string>
+    <string name="section_hives">Völker</string>
+    <string name="last_visit">letzter Besuch %1$s</string>
+    <plurals name="hive_count">
+        <item quantity="one">%d Volk</item>
+        <item quantity="other">%d Völker</item>
+    </plurals>
+    <plurals name="open_items">
+        <item quantity="one">%d offener Punkt</item>
+        <item quantity="other">%d offene Punkte</item>
+    </plurals>
+
+    <string name="hives_search">Völker suchen</string>
+    <string name="hives_empty_title">Keine Treffer</string>
+    <string name="hives_empty_subtitle">Andere Suche oder Filter probieren.</string>
+    <string name="hive_summary">Königin %1$s · Brut %2$s · Zuletzt %3$s</string>
+    <string name="never">nie</string>
+
+    <string name="section_current_state">Aktueller Zustand</string>
+    <string name="section_log">Erfassen</string>
+    <string name="section_photos">Fotos</string>
+    <string name="section_next_actions">Nächste Schritte</string>
+    <string name="section_history">Verlauf</string>
+    <string name="history_empty">Noch keine Aktivität erfasst.</string>
+    <string name="add_photo">Foto hinzufügen</string>
+    <string name="link_nfc_tag">NFC-Tag verknüpfen</string>
+    <string name="nfc_tag_linked">Tag verknüpft</string>
+    <string name="nfc_scan_first">Erst einen Tag scannen</string>
+    <string name="attr_queen">Königin</string>
+    <string name="attr_brood">Brut</string>
+    <string name="attr_strength">Stärke</string>
+    <string name="attr_temperament">Sanftmut</string>
+    <string name="attr_stores">Futter</string>
+    <string name="attr_treatment">Behandlung</string>
+    <string name="hive_last_seen">Zuletzt kontrolliert %1$s · Varroakontrolle %2$s</string>
+
+    <string name="section_recommendations">Empfehlungen</string>
+    <string name="section_todo">Zu erledigen</string>
+    <string name="section_done">Erledigt</string>
+    <string name="tasks_empty">Keine offenen Aufgaben. Mit + hinzufügen.</string>
+    <string name="add_task">Aufgabe hinzufügen</string>
+    <string name="new_task">Neue Aufgabe</string>
+    <string name="task_prompt">Was ist zu tun?</string>
+    <string name="remind_3_days">In 3 Tagen erinnern</string>
+    <string name="task_due">Fällig %1$s</string>
+
+    <string name="log_inspection">Durchsicht</string>
+    <string name="log_mite">Varroakontrolle</string>
+    <string name="log_treatment">Behandlung</string>
+    <string name="log_feeding">Fütterung</string>
+    <string name="log_harvest">Ernte</string>
+    <string name="log_note_title">Notiz / Erinnerung</string>
+    <string name="field_hive">Volk</string>
+    <string name="field_choose_hive">Volk wählen</string>
+    <string name="field_date">Datum</string>
+    <string name="field_notes">Notizen</string>
+    <string name="field_queen_seen">Königin gesehen</string>
+    <string name="field_eggs_seen">Eier gesehen</string>
+    <string name="field_brood">Brutbild</string>
+    <string name="field_strength">Stärke</string>
+    <string name="field_temperament">Sanftmut</string>
+    <string name="field_food">Futtervorrat</string>
+    <string name="field_swarm_signs">Schwarmanzeichen</string>
+    <string name="field_queen_cells">Weiselzellen</string>
+    <string name="field_disease">Krankheitsverdacht</string>
+    <string name="field_pests">Schädlinge</string>
+    <string name="field_add_followup">Folgeaufgabe hinzufügen</string>
+    <string name="field_followup_hint">Folgeaufgabe (in 3 Tagen fällig)</string>
+    <string name="field_method">Methode</string>
+    <string name="field_sample_size">Probengröße (Bienen)</string>
+    <string name="field_mites_counted">Gezählte Milben</string>
+    <string name="field_type">Art</string>
+    <string name="field_start_date">Startdatum</string>
+    <string name="field_dosage">Dosierung (optional)</string>
+    <string name="field_treatment_finished">Behandlung heute beendet</string>
+    <string name="field_schedule_check">Varroakontrolle in 14 Tagen planen</string>
+    <string name="field_feed_type">Futterart</string>
+    <string name="field_quantity">Menge</string>
+    <string name="field_unit">Einheit</string>
+    <string name="field_product">Produkt</string>
+    <string name="field_amount_kg">Menge (kg)</string>
+    <string name="field_batch_note">Chargennotiz (optional)</string>
+    <string name="field_note">Notiz</string>
+    <string name="general_note">Allgemeine Notiz</string>
+
+    <string name="settings_thresholds">Schwellenwerte für Empfehlungen</string>
+    <string name="settings_inspect_active">Kontrollintervall (Saison)</string>
+    <string name="settings_inspect_off">Kontrollintervall (außerhalb der Saison)</string>
+    <string name="settings_mite_interval">Varroa-Kontrollintervall</string>
+    <string name="settings_queen_window">Königin-Nachkontrolle</string>
+    <string name="settings_swarm_window">Schwarm-Nachkontrolle</string>
+    <string name="settings_due_soon_window">„Bald fällig“-Fenster</string>
+    <string name="settings_watch_weak">Schwache Völker beobachten</string>
+    <string name="settings_reset_defaults">Auf Standard zurücksetzen</string>
+    <string name="settings_reminders">Erinnerungen</string>
+    <string name="settings_daily_summary">Tägliche Zusammenfassung</string>
+    <string name="settings_summary_hour">Uhrzeit der Zusammenfassung</string>
+    <string name="settings_quiet_start">Ruhezeit Beginn</string>
+    <string name="settings_quiet_end">Ruhezeit Ende</string>
+    <string name="settings_seasonal">Saisonprofil</string>
+    <string name="settings_seasonal_desc">Steuert Kontrollintervall und Erntevorbereitung.</string>
+    <string name="settings_display_hardware">Anzeige &amp; Hardware</string>
+    <string name="settings_language">Sprache</string>
+    <string name="settings_dynamic_color">Dynamische Farben (Android 12+)</string>
+    <string name="settings_nfc_on">NFC-Tags aktivieren</string>
+    <string name="settings_nfc_unavailable">NFC auf diesem Gerät nicht verfügbar</string>
+    <string name="settings_backup">Sicherung &amp; Wiederherstellung</string>
+    <string name="settings_export_json">JSON exportieren</string>
+    <string name="settings_export_csv">CSV exportieren</string>
+    <string name="settings_restore">Aus JSON wiederherstellen</string>
+    <string name="settings_debug">Debug</string>
+    <string name="settings_recompute">Empfehlungen jetzt neu berechnen</string>
+    <string name="settings_clear_data">Alle Daten löschen</string>
+    <string name="unit_days">Tage</string>
+    <string name="unit_oclock">:00 Uhr</string>
+
+    <string name="restore_title">Aus Sicherung wiederherstellen?</string>
+    <string name="restore_message">Ersetzt alle aktuellen Bienenstände, Völker und den Verlauf durch den Inhalt der gewählten Datei. Kann nicht rückgängig gemacht werden.</string>
+    <string name="restore_choose">Datei wählen</string>
+    <string name="clear_title">Alle Daten löschen?</string>
+    <string name="clear_message">Löscht dauerhaft alle Bienenstände, Völker, Durchsichten und den Verlauf auf diesem Gerät. Kann nicht rückgängig gemacht werden.</string>
+    <string name="clear_confirm">Alles löschen</string>
+    <string name="toast_backup_exported">Sicherung exportiert</string>
+    <string name="toast_csv_exported">CSV exportiert</string>
+    <string name="toast_backup_restored">Sicherung wiederhergestellt</string>
+    <string name="toast_read_failed">Datei konnte nicht gelesen werden</string>
+    <string name="toast_cleared">Alle Daten gelöscht</string>
+    <string name="toast_recomputed">Neu berechnet</string>
+    <string name="lang_system">Systemstandard</string>
+    <string name="lang_english">English</string>
+    <string name="lang_german">Deutsch</string>
+
+    <string name="hivestatus_active">Aktiv</string>
+    <string name="hivestatus_weak">Schwach</string>
+    <string name="hivestatus_queenless">Weisellos</string>
+    <string name="hivestatus_dead">Tot</string>
+    <string name="queen_queenright">Weiselrichtig</string>
+    <string name="queen_queenless">Weisellos</string>
+    <string name="queen_uncertain">Unsicher</string>
+    <string name="queen_virgin">Jungfräulich</string>
+    <string name="brood_good">Gut</string>
+    <string name="brood_uneven">Ungleichmäßig</string>
+    <string name="brood_weak">Schwach</string>
+    <string name="brood_none">Keine</string>
+    <string name="brood_unknown">Unbekannt</string>
+    <string name="strength_weak">Schwach</string>
+    <string name="strength_moderate">Mittel</string>
+    <string name="strength_strong">Stark</string>
+    <string name="strength_unknown">Unbekannt</string>
+    <string name="temperament_calm">Sanft</string>
+    <string name="temperament_normal">Normal</string>
+    <string name="temperament_defensive">Wehrhaft</string>
+    <string name="temperament_unknown">Unbekannt</string>
+    <string name="food_low">Niedrig</string>
+    <string name="food_okay">Okay</string>
+    <string name="food_strong">Reichlich</string>
+    <string name="food_unknown">Unbekannt</string>
+    <string name="yesno_yes">Ja</string>
+    <string name="yesno_no">Nein</string>
+    <string name="yesno_unsure">Unsicher</string>
+    <string name="disease_none">Keine</string>
+    <string name="disease_suspected">Verdacht</string>
+    <string name="pest_none">Keine</string>
+    <string name="pest_varroa">Varroa-Verdacht</string>
+    <string name="pest_wasps">Wespen</string>
+    <string name="pest_hornets">Hornissen</string>
+    <string name="pest_other">Andere</string>
+    <string name="treatstate_none">Keine</string>
+    <string name="treatstate_in_progress">Laufend</string>
+    <string name="treatstate_completed">Abgeschlossen</string>
+    <string name="treatstate_followup">Nachkontrolle fällig</string>
+    <string name="treattype_oxalic">Oxalsäure</string>
+    <string name="treattype_formic">Ameisensäure</string>
+    <string name="treattype_thymol">Thymol</string>
+    <string name="treattype_amitraz">Amitraz</string>
+    <string name="treattype_apivar">Apivar</string>
+    <string name="treattype_other">Andere</string>
+    <string name="mitemethod_alcohol">Auswaschprobe</string>
+    <string name="mitemethod_sugar">Puderzucker</string>
+    <string name="mitemethod_sticky">Bodeneinlage</string>
+    <string name="mitemethod_co2">CO₂-Injektor</string>
+    <string name="mitemethod_visual">Sichtprüfung</string>
+    <string name="feedtype_syrup_light">Sirup 1:1</string>
+    <string name="feedtype_syrup_heavy">Sirup 2:1</string>
+    <string name="feedtype_fondant">Futterteig</string>
+    <string name="feedtype_candy">Zuckerteig</string>
+    <string name="feedtype_pollen">Pollenersatz</string>
+    <string name="feedtype_other">Andere</string>
+    <string name="harvest_honey">Honig</string>
+    <string name="harvest_wax">Wachs</string>
+    <string name="harvest_propolis">Propolis</string>
+    <string name="harvest_pollen">Pollen</string>
+
+    <string name="act_open_hive">Volk öffnen</string>
+    <string name="act_review">Prüfen</string>
+
+    <string name="qet_seen">Königin gesehen</string>
+    <string name="qet_marked">Gezeichnet</string>
+    <string name="qet_requeened">Umgeweiselt</string>
+    <string name="qet_replaced">Ersetzt</string>
+    <string name="qet_superseded">Stille Umweiselung</string>
+    <string name="qet_failed">Versagt</string>
+    <string name="qet_lost">Verloren</string>
+
+    <string name="miteresult_low">Niedrig</string>
+    <string name="miteresult_moderate">Moderat</string>
+    <string name="miteresult_high">Hoch</string>
+    <string name="miteresult_critical">Kritisch</string>
+
+    <string name="timeline_inspection">Durchsicht</string>
+    <string name="timeline_queen">Königin · %1$s</string>
+    <string name="timeline_mite">Varroakontrolle · %1$s</string>
+    <string name="timeline_feeding">Fütterung · %1$s</string>
+    <string name="timeline_harvest">Ernte · %1$s</string>
+    <string name="timeline_inspection_summary">Königin %1$s, Brut %2$s, Stärke %3$s</string>
+    <string name="timeline_swarm_suffix"> · Schwarmanzeichen</string>
+    <string name="timeline_logged">erfasst</string>
+    <string name="timeline_treatment_ongoing"> (laufend)</string>
+    <string name="timeline_fed">Gefüttert</string>
+
+    <string name="season_edit">Saisonprofil bearbeiten</string>
+    <string name="season_screen_title">Saisonprofil</string>
+    <string name="season_name">Profilname</string>
+    <string name="season_location_help">Koordinaten setzen (oder Standort verwenden) und dann die Saison ableiten. Funktioniert offline anhand des Breitengrads; verfeinert mit Online-Klimadaten, wenn eine Verbindung besteht.</string>
+    <string name="season_lat">Breitengrad</string>
+    <string name="season_lon">Längengrad</string>
+    <string name="season_use_location">Meinen Standort verwenden</string>
+    <string name="season_derive">Saison ableiten</string>
+    <string name="season_hemisphere">Hemisphäre</string>
+    <string name="hemi_northern">Nordhalbkugel</string>
+    <string name="hemi_southern">Südhalbkugel</string>
+    <string name="season_active_start">Saisonbeginn</string>
+    <string name="season_active_end">Saisonende</string>
+    <string name="season_harvest_start">Erntebeginn</string>
+    <string name="season_harvest_end">Ernteende</string>
+    <string name="season_winter_prep">Wintervorbereitung</string>
+    <string name="season_derived_online">Saison aus Online-Klimadaten abgeleitet.</string>
+    <string name="season_derived_offline">Saison offline anhand des Breitengrads geschätzt.</string>
+    <string name="season_location_unavailable">Kein Standort verfügbar. Koordinaten eingeben oder Standortberechtigung erteilen.</string>
+    <string name="season_climate_header">Klima an diesem Standort</string>
+    <string name="season_climate_line">Köppen %1$s · Winterhärtezone %2$d · Winter %3$s</string>
+    <string name="winter_mild">mild</string>
+    <string name="winter_moderate">mäßig</string>
+    <string name="winter_harsh">streng</string>
+
+    <string name="settings_weather">Wetter-Timing</string>
+    <string name="settings_inspect_min_temp">Mindesttemperatur für Durchsicht</string>
+    <string name="settings_treat_heat">Hitzegrenze für Behandlung</string>
+    <string name="settings_cold_snap">Kälteeinbruch-Schwelle</string>
+    <string name="unit_celsius">°C</string>
+    <string name="season_now_header">Aktuell an diesem Standort</string>
+    <string name="season_now_phase">Phase: %1$s</string>
+    <string name="season_now_flow">Tracht: %1$s</string>
+    <string name="season_next_flow">nächste Tracht %1$s</string>
+
+    <string name="group_general">Allgemein</string>
+    <string name="more_actions">Weitere Aktionen</string>
+    <string name="phase_winter">Winterpflege</string>
+    <string name="phase_spring">Frühjahrsentwicklung</string>
+    <string name="phase_swarm">Schwarmzeit &amp; Tracht</string>
+    <string name="phase_harvest">Ernte</string>
+    <string name="phase_autumn">Einwinterung</string>
+
+    <string name="flow_none">keine</string>
+    <string name="flow_imminent">steht bevor</string>
+    <string name="flow_active">aktiv</string>
+    <string name="flow_dearth">Trachtlücke</string>
+
+    <!-- Kamera -->
+    <string name="camera_grant">Kamerazugriff erlauben</string>
+
+    <!-- Bestandsbuch -->
+    <string name="recordbook_title">Bestandsbuch</string>
+    <string name="recordbook_open">Bestandsbuch</string>
+    <string name="recordbook_subtitle_de">Bestandsbuch · EU 2019/6 Art. 108</string>
+    <string name="recordbook_not_germany">Dieser Stand liegt nicht in Deutschland, ein Bestandsbuch ist hier rechtlich nicht erforderlich. Du kannst trotzdem Aufzeichnungen führen und exportieren.</string>
+    <string name="recordbook_export">Als PDF exportieren</string>
+    <string name="recordbook_section_treatments">Behandlungen</string>
+    <string name="recordbook_section_receipts">Belege</string>
+    <string name="recordbook_no_treatments">Noch keine Behandlungen an diesem Stand erfasst. Arzneimittelanwendungen (auch Ameisen- und Oxalsäure) erscheinen hier automatisch.</string>
+    <string name="recordbook_no_receipts">Noch keine Belege. Öffne eine Behandlung, die einen Erwerbsbeleg braucht, um einen hinzuzufügen.</string>
+    <string name="receipt_missing">Kein Beleg</string>
+    <string name="receipt_linked">Beleg zugeordnet</string>
+    <string name="recordbook_details_title">Behandlungseintrag</string>
+    <string name="recordbook_product">Arzneimittel / Präparat</string>
+    <string name="recordbook_withdrawal_days">Wartezeit (Tage bis zur Honigernte)</string>
+    <string name="recordbook_link_title">Erwerbsbeleg</string>
+    <string name="recordbook_take_photo">Beleg fotografieren</string>
+    <string name="recordbook_choose_existing">Vorhandenen Beleg zuordnen</string>
+    <string name="recordbook_unlink">Beleg-Zuordnung entfernen</string>
+    <string name="receipt_edit_title">Belegdaten</string>
+    <string name="receipt_supplier_name">Name oder Firma des Lieferanten</string>
+    <string name="receipt_supplier_address">Anschrift des Lieferanten</string>
+    <string name="receipt_purchase_date">Kaufdatum</string>
+    <string name="receipt_label">Bezeichnung / Notiz (z. B. Präparate auf diesem Beleg)</string>
+    <string name="receipt_vet_name">Verschreibender Tierarzt (falls vorhanden)</string>
+    <string name="receipt_vet_contact">Kontaktangaben Tierarzt</string>
+    <string name="receipt_delete">Beleg löschen</string>
+    <string name="receipt_no_supplier">Lieferant nicht erfasst</string>
+    <plurals name="receipt_linked_count">
+        <item quantity="one">%d Behandlung zugeordnet</item>
+        <item quantity="other">%d Behandlungen zugeordnet</item>
+    </plurals>
+    <string name="recordbook_set_location_hint">Lege den Standort dieses Bienenstands fest, damit Appiary erkennen kann, ob das deutsche Bestandsbuch hier gilt.</string>
+    <string name="recordbook_use_location">Meinen Standort verwenden</string>
+    <string name="recordbook_location_unavailable">Kein Standort verfügbar. Erteile die Standortberechtigung und versuche es im Freien erneut.</string>
+    <string name="recordbook_export_done">Bestandsbuch exportiert</string>
+    <string name="recordbook_export_empty">Noch keine Behandlungen zum Export</string>
+    <string name="recordbook_export_failed">PDF konnte nicht geschrieben werden</string>
+
+    <!-- PDF-Dokument -->
+    <string name="pdf_title">Bestandsbuch – Anwendungs- und Abgabebeleg</string>
+    <string name="pdf_apiary">Bienenstand: %1$s</string>
+    <string name="pdf_generated">Erstellt am %1$s</string>
+    <string name="pdf_receipt_caption">Beleg %d</string>
+    <string name="pdf_col_date">Erste Gabe</string>
+    <string name="pdf_col_medicine">Arzneimittel</string>
+    <string name="pdf_col_supplier">Lieferant</string>
+    <string name="pdf_col_quantity">Menge</string>
+    <string name="pdf_col_duration">Dauer</string>
+    <string name="pdf_col_withdrawal">Wartezeit</string>
+    <string name="pdf_col_identity">Volk</string>
+    <string name="pdf_col_vet">Tierarzt</string>
+    <string name="pdf_days">%1$d Tage</string>
+    <string name="pdf_none">—</string>
+
+    <!-- Insights / analytics -->
+    <string name="analytics_title">Auswertung</string>
+    <string name="analytics_empty_title">Noch keine Auswertung</string>
+    <string name="analytics_empty_subtitle">Erfasse Ernten, Varroa-Kontrollen und Durchsichten, um hier Trends zu sehen.</string>
+    <string name="analytics_honey_title">Honigertrag</string>
+    <string name="analytics_honey_this_year">Dieses Jahr</string>
+    <string name="analytics_honey_all_time">Gesamt</string>
+    <string name="analytics_hives_tracked">Erfasste Völker</string>
+    <string name="analytics_avg_mite">Ø Milbenlast</string>
+    <string name="analytics_kg">%1$s kg</string>
+    <string name="analytics_varroa_title">Varroabefall</string>
+    <string name="analytics_varroa_caption">Milben pro 100 Bienen, mit Schwellen für Achtung (3 %) und Handlung (5 %).</string>
+    <string name="analytics_legend_caution">Achtung</string>
+    <string name="analytics_legend_action">Handlung</string>
+    <string name="analytics_cadence_title">Durchsicht-Aktivität</string>
+    <string name="analytics_cadence_caption">Erfasste Durchsichten pro Monat (letzte 12 Monate).</string>
+
+    <!-- Volk-Lebenszyklus (Ableger / Schwarm / Vereinigung) -->
+    <string name="colony_split">Ableger</string>
+    <string name="colony_swarm">Schwarm</string>
+    <string name="colony_merge">Vereinigung</string>
+    <string name="colony_split_from">Aus %1$s</string>
+    <string name="colony_split_off">Ableger gebildet</string>
+    <string name="colony_swarm_caught">Schwarm eingefangen</string>
+    <string name="colony_merge_in">%1$s aufgenommen</string>
+    <string name="colony_merged_into">In ein anderes Volk vereinigt</string>
+    <string name="colony_split_title">Ableger bilden</string>
+    <string name="colony_daughter_name">Name des neuen Volkes</string>
+    <string name="colony_daughter_keeps_queen">Neues Volk behält die Königin</string>
+    <string name="colony_split_hint">Erstellt ein Tochtervolk in diesem Bienenstand. Die Seite ohne Königin muss eine nachziehen oder erhalten.</string>
+    <string name="colony_merge_title">Vereinigen mit…</string>
+    <string name="colony_merge_hint">Dieses Volk wird archiviert und in das gewählte Volk eingegliedert.</string>
+    <string name="colony_capture_title">Schwarm einfangen</string>
+    <string name="colony_capture_name">Name des Volkes</string>
+    <string name="colony_capture_action">Schwarm einfangen</string>
+    <string name="attr_origin">Herkunft</string>
+    <string name="origin_unknown">Unbekannt</string>
+    <string name="origin_package">Kunstschwarm</string>
+    <string name="origin_nuc">Ableger</string>
+    <string name="origin_swarm">Eingefangener Schwarm</string>
+    <string name="origin_split">Ableger</string>
+
+    <!-- Startbildschirm-Widget -->
+    <string name="widget_description">Heutige Imkerei-Prioritäten</string>
+    <string name="widget_all_clear">Alles erledigt 🐝</string>
+    <string name="widget_due_soon_count">+%1$d bald fällig</string>
+
+    <!-- Bienenstand-Karte -->
+    <string name="map_title">Karte</string>
+    <string name="map_empty_title">Noch keine Standorte</string>
+    <string name="map_empty_subtitle">Öffne einen Bienenstand und wähle Menü → Standort festlegen, um ihn auf der Karte zu platzieren.</string>
+    <string name="map_set_location">Standort festlegen</string>
+    <string name="map_set_location_hint">Koordinaten eingeben oder die letzte bekannte Geräteposition übernehmen, falls angezeigt.</string>
+
+    <!-- Stockgewicht -->
+    <string name="weigh_title">Gewicht erfassen</string>
+    <string name="weigh_label">Gewicht (kg)</string>
+    <string name="timeline_weight">Gewicht</string>
+</resources>

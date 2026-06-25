@@ -1,0 +1,454 @@
+<resources>
+    <string name="app_name">Appiary</string>
+
+    <!-- Navigation -->
+    <string name="nav_today">Today</string>
+    <string name="nav_apiaries">Apiaries</string>
+    <string name="nav_hives">Hives</string>
+    <string name="nav_tasks">Tasks</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Quick add -->
+    <string name="quick_add">Quick add</string>
+    <string name="quick_add_title">Log an entry</string>
+    <string name="fab_log">Log</string>
+    <string name="qa_inspection">Inspection</string>
+    <string name="qa_feeding">Feeding</string>
+    <string name="qa_mite">Mite check</string>
+    <string name="qa_treatment">Treatment</string>
+    <string name="qa_harvest">Harvest</string>
+    <string name="qa_note">Note / photo</string>
+
+    <!-- Common actions -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_add">Add</string>
+    <string name="action_back">Back</string>
+    <string name="action_more">More</string>
+    <string name="action_done">Mark done</string>
+    <string name="action_snooze">Snooze 3 days</string>
+    <string name="action_dismiss">Dismiss</string>
+    <string name="tap_for_why">Tap for why</string>
+
+    <!-- Urgency buckets -->
+    <string name="bucket_do_now">Do now</string>
+    <string name="bucket_due_soon">Due soon</string>
+    <string name="bucket_watchlist">Watchlist</string>
+    <string name="bucket_healthy">Healthy</string>
+
+    <!-- Today -->
+    <string name="group_general">General</string>
+    <string name="more_actions">More actions</string>
+    <string name="today_empty_title">Nothing needs doing</string>
+    <string name="today_empty_subtitle">No open actions for this view. Your colonies look settled.</string>
+    <string name="filter_all_apiaries">All apiaries</string>
+    <string name="filter_all">All</string>
+
+    <!-- Apiaries -->
+    <string name="apiaries_empty_title">No apiaries yet</string>
+    <string name="apiaries_empty_subtitle">Tap + to add your first apiary.</string>
+    <string name="add_apiary">Add apiary</string>
+    <string name="new_apiary">New apiary</string>
+    <string name="apiary_name">Apiary name</string>
+    <string name="add_hive">Add hive</string>
+    <string name="new_hive">New hive</string>
+    <string name="hive_name_label">Hive name or number</string>
+    <string name="start_inspection_round">Start inspection round</string>
+    <string name="section_needs_attention">Needs attention</string>
+    <string name="section_hives">Hives</string>
+    <string name="last_visit">last visit %1$s</string>
+    <plurals name="hive_count">
+        <item quantity="one">%d hive</item>
+        <item quantity="other">%d hives</item>
+    </plurals>
+    <plurals name="open_items">
+        <item quantity="one">%d open item</item>
+        <item quantity="other">%d open items</item>
+    </plurals>
+
+    <!-- Hives -->
+    <string name="hives_search">Search hives</string>
+    <string name="hives_empty_title">No hives match</string>
+    <string name="hives_empty_subtitle">Try a different search or apiary filter.</string>
+    <string name="hive_summary">Queen %1$s · Brood %2$s · Last seen %3$s</string>
+    <string name="never">never</string>
+
+    <!-- Hive detail -->
+    <string name="section_current_state">Current state</string>
+    <string name="section_log">Log</string>
+    <string name="section_photos">Photos</string>
+    <string name="section_next_actions">Next actions</string>
+    <string name="section_history">History</string>
+    <string name="history_empty">No activity logged yet.</string>
+    <string name="add_photo">Add photo</string>
+    <string name="link_nfc_tag">Link NFC tag</string>
+    <string name="nfc_tag_linked">Tag linked</string>
+    <string name="nfc_scan_first">Scan a tag first</string>
+    <string name="attr_queen">Queen</string>
+    <string name="attr_brood">Brood</string>
+    <string name="attr_strength">Strength</string>
+    <string name="attr_temperament">Temperament</string>
+    <string name="attr_stores">Stores</string>
+    <string name="attr_treatment">Treatment</string>
+    <string name="hive_last_seen">Last inspected %1$s · mite check %2$s</string>
+
+    <!-- Tasks -->
+    <string name="section_recommendations">Recommendations</string>
+    <string name="section_todo">To do</string>
+    <string name="section_done">Done</string>
+    <string name="tasks_empty">No open tasks. Add one with +.</string>
+    <string name="add_task">Add task</string>
+    <string name="new_task">New task</string>
+    <string name="task_prompt">What needs doing?</string>
+    <string name="remind_3_days">Remind in 3 days</string>
+    <string name="task_due">Due %1$s</string>
+
+    <!-- Logging -->
+    <string name="log_inspection">Inspection</string>
+    <string name="log_mite">Mite check</string>
+    <string name="log_treatment">Treatment</string>
+    <string name="log_feeding">Feeding</string>
+    <string name="log_harvest">Harvest</string>
+    <string name="log_note_title">Note / reminder</string>
+    <string name="field_hive">Hive</string>
+    <string name="field_choose_hive">Choose a hive</string>
+    <string name="field_date">Date</string>
+    <string name="field_notes">Notes</string>
+    <string name="field_queen_seen">Queen seen</string>
+    <string name="field_eggs_seen">Eggs seen</string>
+    <string name="field_brood">Brood pattern</string>
+    <string name="field_strength">Strength</string>
+    <string name="field_temperament">Temperament</string>
+    <string name="field_food">Food stores</string>
+    <string name="field_swarm_signs">Swarm signs</string>
+    <string name="field_queen_cells">Queen cells</string>
+    <string name="field_disease">Disease concern</string>
+    <string name="field_pests">Pests observed</string>
+    <string name="field_add_followup">Add follow-up task</string>
+    <string name="field_followup_hint">Follow-up (due in 3 days)</string>
+    <string name="field_method">Method</string>
+    <string name="field_sample_size">Sample size (bees)</string>
+    <string name="field_mites_counted">Mites counted</string>
+    <string name="field_type">Type</string>
+    <string name="field_start_date">Start date</string>
+    <string name="field_dosage">Dosage (optional)</string>
+    <string name="field_treatment_finished">Treatment finished today</string>
+    <string name="field_schedule_check">Schedule mite check in 14 days</string>
+    <string name="field_feed_type">Feed type</string>
+    <string name="field_quantity">Quantity</string>
+    <string name="field_unit">Unit</string>
+    <string name="field_product">Product</string>
+    <string name="field_amount_kg">Amount (kg)</string>
+    <string name="field_batch_note">Batch note (optional)</string>
+    <string name="field_note">Note</string>
+    <string name="general_note">General note</string>
+
+    <!-- Settings -->
+    <string name="settings_thresholds">Recommendation thresholds</string>
+    <string name="settings_inspect_active">Inspection interval (in season)</string>
+    <string name="settings_inspect_off">Inspection interval (off season)</string>
+    <string name="settings_mite_interval">Mite-check interval</string>
+    <string name="settings_queen_window">Queen follow-up window</string>
+    <string name="settings_swarm_window">Swarm re-check window</string>
+    <string name="settings_due_soon_window">\"Due soon\" window</string>
+    <string name="settings_watch_weak">Watch weak colonies</string>
+    <string name="settings_reset_defaults">Reset to defaults</string>
+    <string name="settings_reminders">Reminders</string>
+    <string name="settings_daily_summary">Daily summary notification</string>
+    <string name="settings_summary_hour">Summary hour</string>
+    <string name="settings_quiet_start">Quiet hours start</string>
+    <string name="settings_quiet_end">Quiet hours end</string>
+    <string name="settings_seasonal">Seasonal profile</string>
+    <string name="settings_seasonal_desc">Scales inspection cadence and harvest-prep timing.</string>
+    <string name="settings_display_hardware">Display &amp; hardware</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_dynamic_color">Use dynamic color (Android 12+)</string>
+    <string name="settings_nfc_on">Enable NFC hive tags</string>
+    <string name="settings_nfc_unavailable">NFC unavailable on this device</string>
+    <string name="settings_backup">Backup &amp; restore</string>
+    <string name="settings_export_json">Export JSON</string>
+    <string name="settings_export_csv">Export CSV</string>
+    <string name="settings_restore">Restore from JSON</string>
+    <string name="settings_debug">Debug</string>
+    <string name="settings_recompute">Recompute recommendations now</string>
+    <string name="settings_clear_data">Clear all data</string>
+    <string name="unit_days">days</string>
+    <string name="unit_oclock">:00</string>
+
+    <!-- Dialogs / toasts -->
+    <string name="restore_title">Restore from backup?</string>
+    <string name="restore_message">This replaces all current apiaries, hives, and history with the contents of the chosen file. This cannot be undone.</string>
+    <string name="restore_choose">Choose file</string>
+    <string name="clear_title">Clear all data?</string>
+    <string name="clear_message">This permanently deletes all apiaries, hives, inspections, and history on this device. This cannot be undone.</string>
+    <string name="clear_confirm">Delete everything</string>
+    <string name="toast_backup_exported">Backup exported</string>
+    <string name="toast_csv_exported">CSV exported</string>
+    <string name="toast_backup_restored">Backup restored</string>
+    <string name="toast_read_failed">Could not read file</string>
+    <string name="toast_cleared">All data cleared</string>
+    <string name="toast_recomputed">Recomputed</string>
+    <string name="lang_system">System default</string>
+    <string name="lang_english">English</string>
+    <string name="lang_german">Deutsch</string>
+
+    <!-- Enum labels -->
+    <string name="hivestatus_active">Active</string>
+    <string name="hivestatus_weak">Weak</string>
+    <string name="hivestatus_queenless">Queenless</string>
+    <string name="hivestatus_dead">Dead</string>
+    <string name="queen_queenright">Queenright</string>
+    <string name="queen_queenless">Queenless</string>
+    <string name="queen_uncertain">Uncertain</string>
+    <string name="queen_virgin">Virgin</string>
+    <string name="brood_good">Good</string>
+    <string name="brood_uneven">Uneven</string>
+    <string name="brood_weak">Weak</string>
+    <string name="brood_none">None</string>
+    <string name="brood_unknown">Unknown</string>
+    <string name="strength_weak">Weak</string>
+    <string name="strength_moderate">Moderate</string>
+    <string name="strength_strong">Strong</string>
+    <string name="strength_unknown">Unknown</string>
+    <string name="temperament_calm">Calm</string>
+    <string name="temperament_normal">Normal</string>
+    <string name="temperament_defensive">Defensive</string>
+    <string name="temperament_unknown">Unknown</string>
+    <string name="food_low">Low</string>
+    <string name="food_okay">Okay</string>
+    <string name="food_strong">Strong</string>
+    <string name="food_unknown">Unknown</string>
+    <string name="yesno_yes">Yes</string>
+    <string name="yesno_no">No</string>
+    <string name="yesno_unsure">Unsure</string>
+    <string name="disease_none">None</string>
+    <string name="disease_suspected">Suspected</string>
+    <string name="pest_none">None</string>
+    <string name="pest_varroa">Varroa suspected</string>
+    <string name="pest_wasps">Wasps</string>
+    <string name="pest_hornets">Hornets</string>
+    <string name="pest_other">Other</string>
+    <string name="treatstate_none">None</string>
+    <string name="treatstate_in_progress">In progress</string>
+    <string name="treatstate_completed">Completed</string>
+    <string name="treatstate_followup">Follow-up due</string>
+    <string name="treattype_oxalic">Oxalic acid</string>
+    <string name="treattype_formic">Formic acid</string>
+    <string name="treattype_thymol">Thymol</string>
+    <string name="treattype_amitraz">Amitraz</string>
+    <string name="treattype_apivar">Apivar</string>
+    <string name="treattype_other">Other</string>
+    <string name="mitemethod_alcohol">Alcohol wash</string>
+    <string name="mitemethod_sugar">Sugar roll</string>
+    <string name="mitemethod_sticky">Sticky board</string>
+    <string name="mitemethod_co2">CO₂ injector</string>
+    <string name="mitemethod_visual">Visual</string>
+    <string name="feedtype_syrup_light">Syrup 1:1</string>
+    <string name="feedtype_syrup_heavy">Syrup 2:1</string>
+    <string name="feedtype_fondant">Fondant</string>
+    <string name="feedtype_candy">Candy</string>
+    <string name="feedtype_pollen">Pollen substitute</string>
+    <string name="feedtype_other">Other</string>
+    <string name="harvest_honey">Honey</string>
+    <string name="harvest_wax">Wax</string>
+    <string name="harvest_propolis">Propolis</string>
+    <string name="harvest_pollen">Pollen</string>
+
+    <!-- Action types (recommendation buttons) -->
+    <string name="act_open_hive">Open hive</string>
+    <string name="act_review">Review</string>
+
+    <!-- Queen event types (timeline) -->
+    <string name="qet_seen">Queen seen</string>
+    <string name="qet_marked">Marked</string>
+    <string name="qet_requeened">Requeened</string>
+    <string name="qet_replaced">Replaced</string>
+    <string name="qet_superseded">Superseded</string>
+    <string name="qet_failed">Failed</string>
+    <string name="qet_lost">Lost</string>
+
+    <!-- Mite results -->
+    <string name="miteresult_low">Low</string>
+    <string name="miteresult_moderate">Moderate</string>
+    <string name="miteresult_high">High</string>
+    <string name="miteresult_critical">Critical</string>
+
+    <!-- Timeline -->
+    <string name="timeline_inspection">Inspection</string>
+    <string name="timeline_queen">Queen · %1$s</string>
+    <string name="timeline_mite">Mite check · %1$s</string>
+    <string name="timeline_feeding">Feeding · %1$s</string>
+    <string name="timeline_harvest">Harvest · %1$s</string>
+    <string name="timeline_inspection_summary">Queen %1$s, brood %2$s, %3$s strength</string>
+    <string name="timeline_swarm_suffix"> · swarm signs</string>
+    <string name="timeline_logged">logged</string>
+    <string name="timeline_treatment_ongoing"> (ongoing)</string>
+    <string name="timeline_fed">Fed</string>
+
+    <!-- Seasonal profile editor -->
+    <string name="season_edit">Edit seasonal profile</string>
+    <string name="season_screen_title">Seasonal profile</string>
+    <string name="season_name">Profile name</string>
+    <string name="season_location_help">Set coordinates (or use your location), then derive the season. Works offline from latitude; refines with online climate data when there\'s a connection.</string>
+    <string name="season_lat">Latitude</string>
+    <string name="season_lon">Longitude</string>
+    <string name="season_use_location">Use my location</string>
+    <string name="season_derive">Derive season</string>
+    <string name="season_hemisphere">Hemisphere</string>
+    <string name="hemi_northern">Northern</string>
+    <string name="hemi_southern">Southern</string>
+    <string name="season_active_start">Active season start</string>
+    <string name="season_active_end">Active season end</string>
+    <string name="season_harvest_start">Harvest start</string>
+    <string name="season_harvest_end">Harvest end</string>
+    <string name="season_winter_prep">Winter prep</string>
+    <string name="season_derived_online">Season derived from online climate data.</string>
+    <string name="season_derived_offline">Season estimated offline from latitude.</string>
+    <string name="season_location_unavailable">No location available. Enter coordinates or grant location permission.</string>
+    <string name="season_climate_header">Climate at this location</string>
+    <string name="season_climate_line">Köppen %1$s · Hardiness zone %2$d · Winter %3$s</string>
+    <string name="winter_mild">mild</string>
+    <string name="winter_moderate">moderate</string>
+    <string name="winter_harsh">harsh</string>
+
+    <!-- Weather-timing settings + season display -->
+    <string name="settings_weather">Weather timing</string>
+    <string name="settings_inspect_min_temp">Good-inspection min temperature</string>
+    <string name="settings_treat_heat">Treatment heat limit</string>
+    <string name="settings_cold_snap">Cold-snap threshold</string>
+    <string name="unit_celsius">°C</string>
+    <string name="season_now_header">Right now at this location</string>
+    <string name="season_now_phase">Phase: %1$s</string>
+    <string name="season_now_flow">Nectar flow: %1$s</string>
+    <string name="season_next_flow">next flow %1$s</string>
+
+    <!-- Season phases -->
+    <string name="phase_winter">Winter care</string>
+    <string name="phase_spring">Spring build-up</string>
+    <string name="phase_swarm">Swarm &amp; flow</string>
+    <string name="phase_harvest">Harvest</string>
+    <string name="phase_autumn">Autumn prep</string>
+
+    <!-- Flow status -->
+    <string name="flow_none">none</string>
+    <string name="flow_imminent">approaching</string>
+    <string name="flow_active">on now</string>
+    <string name="flow_dearth">dearth</string>
+
+    <!-- Camera -->
+    <string name="camera_grant">Grant camera permission</string>
+
+    <!-- Record book (German Bestandsbuch) -->
+    <string name="recordbook_title">Record book</string>
+    <string name="recordbook_open">Record book</string>
+    <string name="recordbook_subtitle_de">Bestandsbuch · EU 2019/6 Art. 108</string>
+    <string name="recordbook_not_germany">This apiary isn\'t in Germany, so a Bestandsbuch isn\'t legally required here. You can still keep records and export them.</string>
+    <string name="recordbook_export">Export PDF</string>
+    <string name="recordbook_section_treatments">Treatments</string>
+    <string name="recordbook_section_receipts">Receipts</string>
+    <string name="recordbook_no_treatments">No treatments logged at this apiary yet. Medicine use (incl. formic and oxalic acid) appears here automatically.</string>
+    <string name="recordbook_no_receipts">No receipts yet. Open a treatment that needs proof of purchase to add one.</string>
+    <string name="receipt_missing">No receipt</string>
+    <string name="receipt_linked">Receipt linked</string>
+    <string name="recordbook_details_title">Treatment record</string>
+    <string name="recordbook_product">Medicine / product name</string>
+    <string name="recordbook_withdrawal_days">Withdrawal (days to honey harvest)</string>
+    <string name="recordbook_link_title">Proof of purchase</string>
+    <string name="recordbook_take_photo">Photograph receipt</string>
+    <string name="recordbook_choose_existing">Link an existing receipt</string>
+    <string name="recordbook_unlink">Remove linked receipt</string>
+    <string name="receipt_edit_title">Receipt details</string>
+    <string name="receipt_supplier_name">Supplier name or company</string>
+    <string name="receipt_supplier_address">Supplier address</string>
+    <string name="receipt_purchase_date">Purchase date</string>
+    <string name="receipt_label">Label / note (e.g. products on this receipt)</string>
+    <string name="receipt_vet_name">Prescribing vet (if any)</string>
+    <string name="receipt_vet_contact">Vet contact</string>
+    <string name="receipt_delete">Delete receipt</string>
+    <string name="receipt_no_supplier">Supplier not set</string>
+    <plurals name="receipt_linked_count">
+        <item quantity="one">%d treatment linked</item>
+        <item quantity="other">%d treatments linked</item>
+    </plurals>
+    <string name="recordbook_set_location_hint">Set this apiary\'s location so Appiary can detect whether the German Bestandsbuch applies here.</string>
+    <string name="recordbook_use_location">Use my location</string>
+    <string name="recordbook_location_unavailable">No location fix available. Grant location permission and try again outdoors.</string>
+    <string name="recordbook_export_done">Record book exported</string>
+    <string name="recordbook_export_empty">No treatments to export yet</string>
+    <string name="recordbook_export_failed">Could not write the PDF</string>
+
+    <!-- PDF document -->
+    <string name="pdf_title">Bestandsbuch – treatment record book</string>
+    <string name="pdf_apiary">Apiary: %1$s</string>
+    <string name="pdf_generated">Generated %1$s</string>
+    <string name="pdf_receipt_caption">Receipt %d</string>
+    <string name="pdf_col_date">First given</string>
+    <string name="pdf_col_medicine">Medicine</string>
+    <string name="pdf_col_supplier">Supplier</string>
+    <string name="pdf_col_quantity">Amount</string>
+    <string name="pdf_col_duration">Duration</string>
+    <string name="pdf_col_withdrawal">Withdrawal</string>
+    <string name="pdf_col_identity">Colony</string>
+    <string name="pdf_col_vet">Vet</string>
+    <string name="pdf_days">%1$d days</string>
+    <string name="pdf_none">—</string>
+
+    <!-- Insights / analytics -->
+    <string name="analytics_title">Insights</string>
+    <string name="analytics_empty_title">Nothing to chart yet</string>
+    <string name="analytics_empty_subtitle">Log harvests, mite checks, and inspections to see trends here.</string>
+    <string name="analytics_honey_title">Honey yield</string>
+    <string name="analytics_honey_this_year">This year</string>
+    <string name="analytics_honey_all_time">All-time</string>
+    <string name="analytics_hives_tracked">Hives tracked</string>
+    <string name="analytics_avg_mite">Avg. mite load</string>
+    <string name="analytics_kg">%1$s kg</string>
+    <string name="analytics_varroa_title">Varroa load</string>
+    <string name="analytics_varroa_caption">Mites per 100 bees, with caution (3%) and action (5%) thresholds.</string>
+    <string name="analytics_legend_caution">Caution</string>
+    <string name="analytics_legend_action">Action</string>
+    <string name="analytics_cadence_title">Inspection activity</string>
+    <string name="analytics_cadence_caption">Inspections logged per month (last 12 months).</string>
+
+    <!-- Colony lifecycle (split / swarm capture / merge) -->
+    <string name="colony_split">Split</string>
+    <string name="colony_swarm">Swarm</string>
+    <string name="colony_merge">Merge</string>
+    <string name="colony_split_from">From %1$s</string>
+    <string name="colony_split_off">Split into a new colony</string>
+    <string name="colony_swarm_caught">Captured swarm</string>
+    <string name="colony_merge_in">Absorbed %1$s</string>
+    <string name="colony_merged_into">Merged into another colony</string>
+    <string name="colony_split_title">Split colony</string>
+    <string name="colony_daughter_name">New colony name</string>
+    <string name="colony_daughter_keeps_queen">New colony keeps the queen</string>
+    <string name="colony_split_hint">Creates a daughter hive in this apiary. The side left without the queen will need to raise or be given one.</string>
+    <string name="colony_merge_title">Merge into…</string>
+    <string name="colony_merge_hint">This colony will be archived and folded into the one you choose.</string>
+    <string name="colony_capture_title">Capture a swarm</string>
+    <string name="colony_capture_name">Colony name</string>
+    <string name="colony_capture_action">Capture swarm</string>
+    <string name="attr_origin">Origin</string>
+    <string name="origin_unknown">Unknown</string>
+    <string name="origin_package">Package</string>
+    <string name="origin_nuc">Nucleus</string>
+    <string name="origin_swarm">Captured swarm</string>
+    <string name="origin_split">Split</string>
+
+    <!-- Home-screen widget -->
+    <string name="widget_description">Today\'s beekeeping priorities</string>
+    <string name="widget_all_clear">All clear 🐝</string>
+    <string name="widget_due_soon_count">+%1$d due soon</string>
+
+    <!-- Apiary map -->
+    <string name="map_title">Map</string>
+    <string name="map_empty_title">No apiary locations yet</string>
+    <string name="map_empty_subtitle">Open an apiary, then its menu → Set location to place it on the map.</string>
+    <string name="map_set_location">Set location</string>
+    <string name="map_set_location_hint">Enter coordinates, or accept the device\'s last-known position if shown.</string>
+
+    <!-- Hive weight -->
+    <string name="weigh_title">Log weight</string>
+    <string name="weigh_label">Weight (kg)</string>
+    <string name="timeline_weight">Weight</string>
+</resources>

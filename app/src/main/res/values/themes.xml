@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Launch theme only. The live UI colors come from AppiaryTheme (Compose).
+      This sets a warm-paper window background (dark in values-night) so there
+      is no white flash before Compose draws.
+    -->
+    <!-- Theme.AppCompat.DayNight descendant is required because MainActivity is an
+         AppCompatActivity (for per-app language switching). The live UI is Compose. -->
+    <style name="Theme.Appiary" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/appiary_window_bg</item>
+    </style>
+</resources>
