@@ -1,0 +1,3 @@
+First release.
+
+Prioritized, explainable hive recommendations from a deterministic rules engine. Fast logging (inspections, mite checks, treatments, feeding, harvests). Insights charts, colony lifecycle (splits/swarm/merge), hive weight, offline apiary map, and a home-screen widget. Seasonal & climate guidance, reminders, JSON/CSV backup, NFC, and German Bestandsbuch records. English & German.

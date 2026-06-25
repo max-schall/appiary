@@ -1,0 +1,21 @@
+Appiary verwandelt deine Stockkarten in klare, priorisierte nächste Schritte. Öffne die App und sieh, was heute zu tun ist, was bald ansteht, welche Völker stabil sind – und vor allem, warum jede Maßnahme vorgeschlagen wird.
+
+Jede Empfehlung stammt aus einer deterministischen, nachvollziehbaren Regel-Engine, nicht aus einem KI-Modell. Kein Konto, keine Cloud, keine Internetpflicht: Deine Daten bleiben auf deinem Gerät.
+
+Funktionen:
+
+* Heute – Prioritäten „Jetzt erledigen / Bald fällig / Beobachten / Gesund", jede Karte mit verständlicher Begründung der zugrunde liegenden Daten
+* Bienenstände & Völker – Status, nächste Maßnahme, Suche, einheitliche Zeitleiste je Volk, Fotos und schnelles Erfassen
+* Schnelles Erfassen – Durchsichten, Varroa-Kontrollen, Behandlungen, Fütterung, Ernten und Notizen in Sekunden
+* Auswertung – Diagramme zu Honigertrag, Varroabefall (mit Behandlungsschwellen) und Durchsicht-Aktivität
+* Volk-Lebenszyklus – Ableger, Schwarmfänge und Vereinigungen mit Eltern-/Tochter-Abstammung
+* Stockgewicht – Waage-Messwerte über die Zeit erfassen
+* Saison- & Klimahinweise – ein Saisonmodell je Bienenstand, offline aus deinen Koordinaten abgeleitet und online mit offenen Wetterdaten verfeinert
+* Karte – eine Offline-OpenStreetMap deiner Standorte
+* Startbildschirm-Widget – die dringenden Aufgaben des Tages auf einen Blick
+* Erinnerungen, vollständige JSON-/CSV-Sicherung und optionale NFC-Stocketiketten
+* Deutsches Bestandsbuch für Tierarzneimittel (EU 2019/6)
+
+Datenschutz: Das Einzige, was je dein Gerät verlässt, sind die Koordinaten eines Bienenstands – und nur an den schlüssellosen Wetterdienst Open-Meteo, um die lokale Saisonschätzung zu verfeinern. Alles andere funktioniert vollständig offline.
+
+Vollständig auf Deutsch und Englisch verfügbar.

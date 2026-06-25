@@ -1,0 +1,21 @@
+Appiary turns your hive records into clear, prioritized next steps. Open it and see what to do today, what's due soon, which colonies are stable, and — crucially — why each action is suggested.
+
+Every recommendation comes from a deterministic, explainable rules engine, not an AI model. There is no account, no cloud, and no network requirement: your data stays on your device.
+
+Features:
+
+* Today — "Do now / Due soon / Watchlist / Healthy" priorities, each card with a plain-language explanation of the inputs behind it
+* Apiaries & hives — status, next action, search, a unified per-hive timeline, photos and quick logging
+* Fast logging — inspections, mite checks, treatments, feeding, harvests and notes in seconds
+* Insights — honey-yield, varroa-load (with treatment thresholds) and inspection-activity charts
+* Colony lifecycle — record splits, swarm captures and merges, with parent/daughter lineage
+* Hive weight — log scale readings over time
+* Seasonal & climate guidance — a per-apiary season model derived offline from your coordinates, refined with open weather data when online
+* Map — an offline OpenStreetMap of your apiary locations
+* Home-screen widget — today's urgent tasks at a glance
+* Reminders, full JSON/CSV backup and optional NFC hive tags
+* German "Bestandsbuch" veterinary-medicine record-keeping (EU 2019/6)
+
+Privacy: the only data ever sent off your device is apiary coordinates, and only to the keyless Open-Meteo weather service to refine the local season estimate. Everything else works fully offline.
+
+Fully available in English and German.

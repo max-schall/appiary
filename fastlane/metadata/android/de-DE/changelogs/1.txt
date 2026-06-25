@@ -1,0 +1,3 @@
+Erste Veröffentlichung.
+
+Priorisierte, nachvollziehbare Empfehlungen aus einer deterministischen Regel-Engine. Schnelles Erfassen (Durchsichten, Varroa-Kontrollen, Behandlungen, Fütterung, Ernten). Auswertungs-Diagramme, Volk-Lebenszyklus (Ableger/Schwarm/Vereinigung), Stockgewicht, Offline-Standortkarte und ein Startbildschirm-Widget. Saison- & Klimahinweise, Erinnerungen, JSON-/CSV-Sicherung, NFC und deutsches Bestandsbuch. Deutsch & Englisch.
