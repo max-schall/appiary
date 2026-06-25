@@ -144,3 +144,11 @@ an end-to-end check that representative hives produce the expected recommendatio
 ```bash
 ./gradlew :app:testDebugUnitTest
 ```
+
+## License
+
+Copyright (C) 2026 Max Schall
+
+Appiary is free software, licensed under the **GNU General Public License v3.0**
+(or later) — see [LICENSE](LICENSE). You may use, study, share, and modify it;
+derivative works must remain free software under the same license.
