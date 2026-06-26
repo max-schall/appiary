@@ -61,12 +61,21 @@ class HiveDetailViewModel(
     treatmentRepo: TreatmentRepository,
     feedingRepo: FeedingRepository,
     harvestRepo: HarvestRepository,
-    queenRecordRepo: QueenRecordRepository,
+    private val queenRecordRepo: QueenRecordRepository,
     photoRepo: PhotoRepository,
 ) : AndroidViewModel(application) {
 
     val hiveId: String = checkNotNull(savedStateHandle["hiveId"])
     private fun s(resId: Int, vararg args: Any) = getApplication<Application>().getString(resId, *args)
+
+    /** Localize a stored mark colour (an enum name); fall back to the raw text. */
+    private fun markColorLabel(raw: String?): String? {
+        if (raw.isNullOrBlank()) return null
+        val known = runCatching {
+            enumValueOf<io.github.max_schall.appiary.domain.model.QueenMarkColor>(raw).labelRes()
+        }.getOrNull()
+        return known?.let { s(it) } ?: raw
+    }
 
     private val metaFlow = combine(
         hiveRepo.observeHive(hiveId),
@@ -135,7 +144,7 @@ class HiveDetailViewModel(
         val queenEntries = meta.queens.map {
             TimelineEntry(
                 it.id, it.recordedAt, TimelineKind.QUEEN, s(R.string.timeline_queen, s(it.event.labelRes())),
-                listOfNotNull(s(it.resultingStatus.labelRes()), it.markColor).joinToString(" · "),
+                listOfNotNull(s(it.resultingStatus.labelRes()), markColorLabel(it.markColor)).joinToString(" · "),
             )
         }
         val colonyEntries = meta.colony.map { e ->
@@ -166,6 +175,30 @@ class HiveDetailViewModel(
 
     fun mergeInto(targetId: String) = viewModelScope.launch {
         colonyRepo.merge(sourceId = hiveId, targetId = targetId)
+    }
+
+    /** Record a queen event (requeen, mark, loss, …); also updates hive queen status. */
+    fun logQueenEvent(
+        event: io.github.max_schall.appiary.domain.model.QueenEventType,
+        resultingStatus: io.github.max_schall.appiary.domain.model.QueenStatus,
+        markColor: io.github.max_schall.appiary.domain.model.QueenMarkColor? = null,
+        origin: String? = null,
+        notes: String? = null,
+    ) = viewModelScope.launch {
+        val now = System.currentTimeMillis()
+        queenRecordRepo.save(
+            io.github.max_schall.appiary.data.entity.QueenRecordEntity(
+                hiveId = hiveId,
+                recordedAt = now,
+                event = event,
+                resultingStatus = resultingStatus,
+                markColor = markColor?.name,
+                origin = origin?.trim()?.ifBlank { null },
+                notes = notes?.trim()?.ifBlank { null },
+                createdAt = now,
+                updatedAt = now,
+            ),
+        )
     }
 
     fun logWeight(weightKg: Double) = viewModelScope.launch {

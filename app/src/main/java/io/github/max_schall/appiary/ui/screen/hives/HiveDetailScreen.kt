@@ -77,6 +77,7 @@ fun HiveDetailScreen(
     var showSplit by remember { mutableStateOf(false) }
     var showMerge by remember { mutableStateOf(false) }
     var showWeigh by remember { mutableStateOf(false) }
+    var showQueen by remember { mutableStateOf(false) }
     val context = androidx.compose.ui.platform.LocalContext.current
     val hive = state.hive
     val tagLinkedMsg = stringResource(R.string.nfc_tag_linked)
@@ -95,6 +96,10 @@ fun HiveDetailScreen(
                     Icon(Icons.Filled.MoreVert, contentDescription = stringResource(R.string.action_more))
                 }
                 androidx.compose.material3.DropdownMenu(menuOpen, onDismissRequest = { menuOpen = false }) {
+                    androidx.compose.material3.DropdownMenuItem(
+                        text = { Text(stringResource(R.string.queen_event_title)) },
+                        onClick = { menuOpen = false; showQueen = true },
+                    )
                     androidx.compose.material3.DropdownMenuItem(
                         text = { Text(stringResource(R.string.weigh_title)) },
                         onClick = { menuOpen = false; showWeigh = true },
@@ -200,6 +205,15 @@ fun HiveDetailScreen(
             onConfirm = { kg ->
                 showWeigh = false
                 viewModel.logWeight(kg)
+            },
+        )
+    }
+    if (showQueen) {
+        QueenEventDialog(
+            onDismiss = { showQueen = false },
+            onConfirm = { event, status, markColor, origin, notes ->
+                showQueen = false
+                viewModel.logQueenEvent(event, status, markColor, origin, notes)
             },
         )
     }

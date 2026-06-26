@@ -104,4 +104,7 @@ class Converters {
 
     @TypeConverter fun fromColonyEventType(v: io.github.max_schall.appiary.domain.model.ColonyEventType) = v.name
     @TypeConverter fun toColonyEventType(v: String) = enumValueOf<io.github.max_schall.appiary.domain.model.ColonyEventType>(v)
+
+    @TypeConverter fun fromInventoryCategory(v: io.github.max_schall.appiary.domain.model.InventoryCategory) = v.name
+    @TypeConverter fun toInventoryCategory(v: String) = enumValueOf<io.github.max_schall.appiary.domain.model.InventoryCategory>(v)
 }

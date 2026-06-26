@@ -7,10 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.lifecycleScope
 import io.github.max_schall.appiary.data.settings.AppPrefs
+import io.github.max_schall.appiary.data.settings.ThemeMode
 import io.github.max_schall.appiary.nfc.NfcController
 import io.github.max_schall.appiary.ui.navigation.AppiaryApp
 import io.github.max_schall.appiary.ui.theme.AppiaryTheme
@@ -26,7 +28,12 @@ class MainActivity : AppCompatActivity() {
         handleNfcIntent(intent)
         setContent {
             val prefs by settings.appPrefs.collectAsState(initial = AppPrefs())
-            AppiaryTheme(dynamicColor = prefs.dynamicColor) {
+            val darkTheme = when (prefs.themeMode) {
+                ThemeMode.LIGHT -> false
+                ThemeMode.DARK -> true
+                ThemeMode.SYSTEM -> isSystemInDarkTheme()
+            }
+            AppiaryTheme(darkTheme = darkTheme, dynamicColor = prefs.dynamicColor) {
                 val windowSizeClass = calculateWindowSizeClass(this)
                 AppiaryApp(widthSizeClass = windowSizeClass.widthSizeClass)
             }

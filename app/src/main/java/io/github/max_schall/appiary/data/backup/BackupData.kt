@@ -41,4 +41,5 @@ data class BackupData(
     val receipts: List<MedicineReceiptEntity> = emptyList(),
     val colonyEvents: List<io.github.max_schall.appiary.data.entity.ColonyEventEntity> = emptyList(),
     val weightEntries: List<io.github.max_schall.appiary.data.entity.WeightEntryEntity> = emptyList(),
+    val inventoryItems: List<io.github.max_schall.appiary.data.entity.InventoryItemEntity> = emptyList(),
 )

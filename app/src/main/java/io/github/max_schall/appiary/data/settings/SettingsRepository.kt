@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.doublePreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import io.github.max_schall.appiary.domain.rules.RuleConfig
 import kotlinx.coroutines.flow.Flow
@@ -15,8 +16,12 @@ import kotlinx.coroutines.flow.map
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("appiary_settings")
 
+/** App theme selection. Defaults to following the system light/dark setting. */
+enum class ThemeMode { SYSTEM, LIGHT, DARK }
+
 /** Notification + display preferences not owned by the rules engine. */
 data class AppPrefs(
+    val themeMode: ThemeMode = ThemeMode.SYSTEM,
     val dynamicColor: Boolean = false,
     val nfcEnabled: Boolean = false,
     val dailySummaryEnabled: Boolean = true,
@@ -46,6 +51,7 @@ class SettingsRepository(private val context: Context) {
         val TREAT_HEAT_MAX = doublePreferencesKey("rule_treat_heat_max")
         val COLD_SNAP_MIN = doublePreferencesKey("rule_cold_snap_min")
 
+        val THEME_MODE = stringPreferencesKey("app_theme_mode")
         val DYNAMIC_COLOR = booleanPreferencesKey("app_dynamic_color")
         val NFC_ENABLED = booleanPreferencesKey("app_nfc_enabled")
         val DAILY_SUMMARY = booleanPreferencesKey("app_daily_summary")
@@ -81,6 +87,7 @@ class SettingsRepository(private val context: Context) {
     suspend fun updateAppPrefs(transform: (AppPrefs) -> AppPrefs) {
         context.dataStore.edit { prefs ->
             val p = transform(prefs.toAppPrefs())
+            prefs[Keys.THEME_MODE] = p.themeMode.name
             prefs[Keys.DYNAMIC_COLOR] = p.dynamicColor
             prefs[Keys.NFC_ENABLED] = p.nfcEnabled
             prefs[Keys.DAILY_SUMMARY] = p.dailySummaryEnabled
@@ -113,6 +120,7 @@ class SettingsRepository(private val context: Context) {
     private fun Preferences.toAppPrefs(): AppPrefs {
         val d = AppPrefs()
         return AppPrefs(
+            themeMode = this[Keys.THEME_MODE]?.let { runCatching { ThemeMode.valueOf(it) }.getOrNull() } ?: d.themeMode,
             dynamicColor = this[Keys.DYNAMIC_COLOR] ?: d.dynamicColor,
             nfcEnabled = this[Keys.NFC_ENABLED] ?: d.nfcEnabled,
             dailySummaryEnabled = this[Keys.DAILY_SUMMARY] ?: d.dailySummaryEnabled,

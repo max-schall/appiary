@@ -53,6 +53,8 @@ class SettingsViewModel(
 
     suspend fun exportJson(): String = backupManager.exportJson()
     suspend fun exportCsv(): String = backupManager.exportInspectionsCsv()
+    suspend fun exportHarvestsCsv(): String = backupManager.exportHarvestsCsv()
+    suspend fun exportInventoryCsv(): String = backupManager.exportInventoryCsv()
 
     fun restore(jsonText: String) = viewModelScope.launch {
         backupManager.importJson(jsonText)

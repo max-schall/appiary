@@ -151,6 +151,36 @@ import io.github.max_schall.appiary.ui.navigation.TopDestination
     QueenEventType.LOST -> R.string.qet_lost
 }
 
+@StringRes fun io.github.max_schall.appiary.domain.model.InventoryCategory.labelRes(): Int = when (this) {
+    io.github.max_schall.appiary.domain.model.InventoryCategory.HARDWARE -> R.string.invcat_hardware
+    io.github.max_schall.appiary.domain.model.InventoryCategory.FRAMES -> R.string.invcat_frames
+    io.github.max_schall.appiary.domain.model.InventoryCategory.TOOLS -> R.string.invcat_tools
+    io.github.max_schall.appiary.domain.model.InventoryCategory.PROTECTIVE -> R.string.invcat_protective
+    io.github.max_schall.appiary.domain.model.InventoryCategory.FEED -> R.string.invcat_feed
+    io.github.max_schall.appiary.domain.model.InventoryCategory.TREATMENT -> R.string.invcat_treatment
+    io.github.max_schall.appiary.domain.model.InventoryCategory.PACKAGING -> R.string.invcat_packaging
+    io.github.max_schall.appiary.domain.model.InventoryCategory.OTHER -> R.string.invcat_other
+}
+
+@StringRes fun io.github.max_schall.appiary.domain.model.QueenMarkColor.labelRes(): Int = when (this) {
+    io.github.max_schall.appiary.domain.model.QueenMarkColor.WHITE -> R.string.queenmark_white
+    io.github.max_schall.appiary.domain.model.QueenMarkColor.YELLOW -> R.string.queenmark_yellow
+    io.github.max_schall.appiary.domain.model.QueenMarkColor.RED -> R.string.queenmark_red
+    io.github.max_schall.appiary.domain.model.QueenMarkColor.GREEN -> R.string.queenmark_green
+    io.github.max_schall.appiary.domain.model.QueenMarkColor.BLUE -> R.string.queenmark_blue
+}
+
+@StringRes fun io.github.max_schall.appiary.data.repository.SearchResultKind.labelRes(): Int = when (this) {
+    io.github.max_schall.appiary.data.repository.SearchResultKind.HIVE -> R.string.searchkind_hive
+    io.github.max_schall.appiary.data.repository.SearchResultKind.INSPECTION -> R.string.searchkind_inspection
+    io.github.max_schall.appiary.data.repository.SearchResultKind.MITE_CHECK -> R.string.searchkind_mite
+    io.github.max_schall.appiary.data.repository.SearchResultKind.TREATMENT -> R.string.searchkind_treatment
+    io.github.max_schall.appiary.data.repository.SearchResultKind.FEEDING -> R.string.searchkind_feeding
+    io.github.max_schall.appiary.data.repository.SearchResultKind.HARVEST -> R.string.searchkind_harvest
+    io.github.max_schall.appiary.data.repository.SearchResultKind.TASK -> R.string.searchkind_task
+    io.github.max_schall.appiary.data.repository.SearchResultKind.INVENTORY -> R.string.searchkind_inventory
+}
+
 @StringRes fun MiteResult.labelRes(): Int = when (this) {
     MiteResult.LOW -> R.string.miteresult_low
     MiteResult.MODERATE -> R.string.miteresult_moderate

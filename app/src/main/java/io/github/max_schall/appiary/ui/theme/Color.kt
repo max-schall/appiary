@@ -5,46 +5,64 @@ import androidx.compose.ui.graphics.Color
 /**
  * Appiary palette — "modern field notebook".
  *
- * Anchors: deep moss green, warm paper, honey amber, muted berry. The goal is a
- * calm, grounded, sunlight-readable surface that reads like a beekeeping journal
- * rather than a generic dashboard. Values are hand-tuned (not dynamic-generated)
- * so the brand stays consistent outdoors and across devices.
+ * Anchors: honey gold, leaf green, bark brown, warm cream, muted berry — sampled
+ * from the app logo (see the Logo* tokens below, which drive both themes). The
+ * goal is a calm, grounded, sunlight-readable surface that reads like a
+ * beekeeping journal rather than a generic dashboard. Values are hand-tuned (not
+ * dynamic-generated) so the brand stays consistent outdoors and across devices.
  */
 
-// --- Brand greens -----------------------------------------------------------
-val Moss = Color(0xFF2E5141)          // deep moss / chalkboard green (primary)
-val MossDark = Color(0xFF11271D)
-val MossLight = Color(0xFF9CC3A9)
-val SageContainer = Color(0xFFC9D8CB)
-val Sage = Color(0xFF66785A)          // muted sage / wax green (secondary)
-val SageDark = Color(0xFF1E2615)
-val SageContainerLight = Color(0xFFDCE3CE)
-
-// --- Honey / amber (warnings, due-soon) -------------------------------------
+// --- Honey / amber (due-soon status) ----------------------------------------
 val Honey = Color(0xFFD9A441)
-val HoneyDeep = Color(0xFFB07A2B)
-val HoneyContainer = Color(0xFFF4E2BE)
-val HoneyOnContainer = Color(0xFF3A2A08)
-
-// --- Paper / stone neutrals -------------------------------------------------
-val Paper = Color(0xFFF5F2E9)         // warm off-white background
-val PaperSurface = Color(0xFFF8F5EC)
-val Stone = Color(0xFFE3E0D2)         // surfaceVariant
-val StoneDeep = Color(0xFFC9C7B7)
-val Ink = Color(0xFF1F231E)           // primary text on light
-val InkMuted = Color(0xFF494A40)
 
 // --- Berry (error) ----------------------------------------------------------
 val Berry = Color(0xFF9B4A4A)
 val BerryContainer = Color(0xFFF3D9D6)
 val BerryOnContainer = Color(0xFF3A0E0E)
 
-// --- Dark surfaces ----------------------------------------------------------
-val NightBg = Color(0xFF15140F)
-val NightSurface = Color(0xFF1B1A14)
-val NightSurfaceVariant = Color(0xFF45463B)
-val Chalk = Color(0xFFEDEAE0)         // off-white text on dark
-val ChalkMuted = Color(0xFFC9C7B7)
+// --- Logo palette (drives the default light theme) --------------------------
+// Sampled straight from the app icon: golden skep, bark-brown linework, leaf
+// green, and the warm cream the artwork sits on.
+val LogoHoneyGold = Color(0xFFDDA53A)     // the skep body
+val LogoHoneyDeep = Color(0xFFB47B22)     // deeper gold, readable as primary
+val LogoHoneyContainer = Color(0xFFF7E4BB)
+val LogoHoneyOnContainer = Color(0xFF492F0A)
+val LogoBark = Color(0xFF5C3B22)          // brown outlines (text / tertiary)
+val LogoBarkDark = Color(0xFF3E2817)
+val LogoBarkContainer = Color(0xFFEADBC8)
+val LogoLeaf = Color(0xFF5E7A38)          // the leaf
+val LogoLeafDark = Color(0xFF324319)
+val LogoLeafContainer = Color(0xFFDDE7C6)
+val LogoCream = Color(0xFFFBF6EA)         // artwork background
+val LogoSurface = Color(0xFFFFFDF7)
+val LogoSurfaceVariant = Color(0xFFEDE4D2)
+val LogoInk = Color(0xFF2C2317)           // warm near-black text
+val LogoInkMuted = Color(0xFF59503F)
+val LogoOutline = Color(0xFF8A8270)
+val LogoOutlineVariant = Color(0xFFD6CCB7)
+
+// --- Logo palette, dark variant (drives the dark theme) ---------------------
+// Same honey-gold / leaf / bark identity, lightened & desaturated for legibility
+// on warm near-black surfaces so dark mode shares the light theme's brand.
+val LogoHoneyLight = Color(0xFFE8C074)    // lightened skep gold (dark primary)
+val LogoHoneyOnDark = Color(0xFF452C08)   // text/icon on the gold
+val LogoHoneyDarkContainer = Color(0xFF6E4E14)
+val LogoHoneyOnDarkContainer = Color(0xFFF7E4BB)
+val LogoLeafLight = Color(0xFFAAC57E)     // lightened leaf (dark secondary)
+val LogoLeafOnDark = Color(0xFF253410)
+val LogoLeafDarkContainer = Color(0xFF44561F)
+val LogoLeafOnDarkContainer = Color(0xFFDDE7C6)
+val LogoBarkLight = Color(0xFFD3B595)     // warm tan (dark tertiary)
+val LogoBarkOnDark = Color(0xFF3E2817)
+val LogoBarkDarkContainer = Color(0xFF5C3B22)
+val LogoBarkOnDarkContainer = Color(0xFFEADBC8)
+val LogoNightBg = Color(0xFF16120B)       // warm near-black background
+val LogoNightSurface = Color(0xFF1D1810)
+val LogoNightSurfaceVariant = Color(0xFF4A4032)
+val LogoChalk = Color(0xFFEDE4D2)         // warm off-white text on dark
+val LogoChalkMuted = Color(0xFFCFC4AE)
+val LogoOutlineDark = Color(0xFF978C76)
+val LogoOutlineVariantDark = Color(0xFF4A4234)
 
 // --- Urgency status colors (paired with icon + label in UI; never color-only)
 // Light variants

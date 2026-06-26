@@ -75,6 +75,12 @@ object AppViewModelProvider {
             val c = container()
             TasksViewModel(c.taskRepository, c.recommendationRepository, c.hiveRepository, c.apiaryRepository)
         }
+        initializer {
+            io.github.max_schall.appiary.ui.screen.inventory.InventoryViewModel(container().inventoryRepository)
+        }
+        initializer {
+            io.github.max_schall.appiary.ui.screen.search.SearchViewModel(container().searchRepository)
+        }
 
         // --- Logging flows ---
         initializer {

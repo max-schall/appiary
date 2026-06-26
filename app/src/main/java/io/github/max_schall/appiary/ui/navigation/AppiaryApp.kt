@@ -25,6 +25,7 @@ import androidx.compose.runtime.setValue
 import io.github.max_schall.appiary.nfc.NfcController
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import io.github.max_schall.appiary.R
 import io.github.max_schall.appiary.ui.i18n.labelRes
 import androidx.navigation.NavController
@@ -91,7 +92,7 @@ fun AppiaryApp(widthSizeClass: WindowWidthSizeClass) {
                         selected = current == dest,
                         onClick = { navController.navigateTopLevel(dest) },
                         icon = { Icon(dest.icon, contentDescription = label) },
-                        label = { Text(label) },
+                        label = { Text(label, maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis) },
                     )
                 }
             }
@@ -109,7 +110,7 @@ fun AppiaryApp(widthSizeClass: WindowWidthSizeClass) {
                             selected = current == dest,
                             onClick = { navController.navigateTopLevel(dest) },
                             icon = { Icon(dest.icon, contentDescription = label) },
-                            label = { Text(label) },
+                            label = { Text(label, maxLines = 1, softWrap = false, overflow = TextOverflow.Ellipsis) },
                         )
                     }
                 }
@@ -152,6 +153,13 @@ private fun AppNavHost(navController: NavHostController, modifier: Modifier = Mo
                 onOpenHive = ::openHive,
                 onOpenRecordBook = { apiaryId -> navController.navigate("recordbook/$apiaryId") },
                 onOpenInsights = { navController.navigate("analytics") },
+                onOpenSearch = { navController.navigate("search") },
+            )
+        }
+        composable("search") {
+            io.github.max_schall.appiary.ui.screen.search.SearchScreen(
+                onBack = { navController.popBackStack() },
+                onOpenHive = ::openHive,
             )
         }
         composable("analytics") {
@@ -234,7 +242,15 @@ private fun AppNavHost(navController: NavHostController, modifier: Modifier = Mo
             }
         }
         composable(TopDestination.Settings.route) {
-            SettingsScreen(onEditSeasonalProfile = { navController.navigate("settings/seasonal") })
+            SettingsScreen(
+                onEditSeasonalProfile = { navController.navigate("settings/seasonal") },
+                onOpenInventory = { navController.navigate("inventory") },
+            )
+        }
+        composable("inventory") {
+            io.github.max_schall.appiary.ui.screen.inventory.InventoryScreen(
+                onBack = { navController.popBackStack() },
+            )
         }
         composable("settings/seasonal") {
             SeasonalProfileScreen(onBack = { navController.popBackStack() })

@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import io.github.max_schall.appiary.R
+import io.github.max_schall.appiary.data.settings.ThemeMode
 import io.github.max_schall.appiary.nfc.NfcController
 import io.github.max_schall.appiary.ui.AppViewModelProvider
 import io.github.max_schall.appiary.util.AppLanguage
@@ -54,6 +55,7 @@ import kotlinx.coroutines.withContext
 @Composable
 fun SettingsScreen(
     onEditSeasonalProfile: () -> Unit,
+    onOpenInventory: () -> Unit,
     viewModel: SettingsViewModel = viewModel(factory = AppViewModelProvider.Factory),
 ) {
     val rules by viewModel.ruleConfig.collectAsStateWithLifecycle()
@@ -87,6 +89,18 @@ fun SettingsScreen(
     ) { uri: Uri? ->
         uri ?: return@rememberLauncherForActivityResult
         scope.launch { writeText(context, uri, viewModel.exportCsv()); toast(msgCsv) }
+    }
+    val exportHarvestsCsvLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument("text/csv"),
+    ) { uri: Uri? ->
+        uri ?: return@rememberLauncherForActivityResult
+        scope.launch { writeText(context, uri, viewModel.exportHarvestsCsv()); toast(msgCsv) }
+    }
+    val exportInventoryCsvLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument("text/csv"),
+    ) { uri: Uri? ->
+        uri ?: return@rememberLauncherForActivityResult
+        scope.launch { writeText(context, uri, viewModel.exportInventoryCsv()); toast(msgCsv) }
     }
     val importLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.OpenDocument(),
@@ -178,7 +192,25 @@ fun SettingsScreen(
             OutlinedButton(onClick = onEditSeasonalProfile) { Text(stringResource(R.string.season_edit)) }
 
             HorizontalDivider(Modifier.padding(vertical = Spacing.sm))
+            SectionHeader(stringResource(R.string.settings_inventory))
+            Text(
+                stringResource(R.string.settings_inventory_desc),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            OutlinedButton(onClick = onOpenInventory) { Text(stringResource(R.string.inventory_open)) }
+
+            HorizontalDivider(Modifier.padding(vertical = Spacing.sm))
             SectionHeader(stringResource(R.string.settings_display_hardware))
+            Text(
+                stringResource(R.string.settings_theme),
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            ThemeSelector(
+                current = prefs.themeMode,
+                onSelect = { mode -> viewModel.updatePrefs { it.copy(themeMode = mode) } },
+            )
             ToggleRowSimple(stringResource(R.string.settings_dynamic_color), prefs.dynamicColor) { v ->
                 viewModel.updatePrefs { it.copy(dynamicColor = v) }
             }
@@ -192,6 +224,10 @@ fun SettingsScreen(
             Row(horizontalArrangement = Arrangement.spacedBy(Spacing.sm)) {
                 OutlinedButton(onClick = { exportJsonLauncher.launch("appiary-backup.json") }) { Text(stringResource(R.string.settings_export_json)) }
                 OutlinedButton(onClick = { exportCsvLauncher.launch("appiary-inspections.csv") }) { Text(stringResource(R.string.settings_export_csv)) }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(Spacing.sm)) {
+                OutlinedButton(onClick = { exportHarvestsCsvLauncher.launch("appiary-harvests.csv") }) { Text(stringResource(R.string.settings_export_csv_harvests)) }
+                OutlinedButton(onClick = { exportInventoryCsvLauncher.launch("appiary-inventory.csv") }) { Text(stringResource(R.string.settings_export_csv_inventory)) }
             }
             OutlinedButton(onClick = { confirmRestore = true }) {
                 Text(stringResource(R.string.settings_restore))
@@ -237,6 +273,28 @@ fun SettingsScreen(
                 androidx.compose.material3.TextButton(onClick = { confirmClear = false }) { Text(stringResource(R.string.action_cancel)) }
             },
         )
+    }
+}
+
+@Composable
+private fun ThemeSelector(
+    current: ThemeMode,
+    onSelect: (ThemeMode) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Row(modifier, horizontalArrangement = Arrangement.spacedBy(Spacing.sm)) {
+        ThemeMode.entries.forEach { mode ->
+            val label = when (mode) {
+                ThemeMode.LIGHT -> stringResource(R.string.theme_light)
+                ThemeMode.DARK -> stringResource(R.string.theme_dark)
+                ThemeMode.SYSTEM -> stringResource(R.string.theme_system)
+            }
+            androidx.compose.material3.FilterChip(
+                selected = current == mode,
+                onClick = { if (current != mode) onSelect(mode) },
+                label = { Text(label) },
+            )
+        }
     }
 }
 

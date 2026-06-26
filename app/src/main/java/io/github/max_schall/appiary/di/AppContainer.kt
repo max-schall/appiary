@@ -57,6 +57,21 @@ class AppContainer(private val context: Context) {
     val queenRecordRepository by lazy {
         QueenRecordRepository(database.queenRecordDao(), database.hiveDao())
     }
+    val inventoryRepository by lazy {
+        io.github.max_schall.appiary.data.repository.InventoryRepository(database.inventoryDao())
+    }
+    val searchRepository by lazy {
+        io.github.max_schall.appiary.data.repository.SearchRepository(
+            hiveDao = database.hiveDao(),
+            inspectionDao = database.inspectionDao(),
+            miteCheckDao = database.miteCheckDao(),
+            treatmentDao = database.treatmentDao(),
+            feedingDao = database.feedingDao(),
+            harvestDao = database.harvestDao(),
+            taskDao = database.manualTaskDao(),
+            inventoryDao = database.inventoryDao(),
+        )
+    }
     val colonyRepository by lazy {
         io.github.max_schall.appiary.data.repository.ColonyRepository(
             database.colonyEventDao(), database.hiveDao(),

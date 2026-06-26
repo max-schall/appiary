@@ -146,6 +146,20 @@ enum class QueenEventType(val label: String) {
     LOST("Lost"),
 }
 
+/**
+ * The five international queen-marking colours. The convention rotates by the
+ * year the queen was raised (see [io.github.max_schall.appiary.domain.usecase.QueenMarking]).
+ * [rgb] is the dot colour for the UI swatch.
+ */
+@Serializable
+enum class QueenMarkColor(val label: String, val rgb: Long) {
+    WHITE("White", 0xFFF2F2F2),
+    YELLOW("Yellow", 0xFFFFD600),
+    RED("Red", 0xFFD32F2F),
+    GREEN("Green", 0xFF388E3C),
+    BLUE("Blue", 0xFF1E88E5),
+}
+
 @Serializable
 enum class TaskStatus(val label: String) {
     OPEN("Open"),
@@ -223,4 +237,17 @@ enum class ColonyEventType(val label: String) {
     SPLIT("Split"),
     SWARM_CAPTURE("Swarm capture"),
     MERGE("Merge"),
+}
+
+/** Coarse buckets for the equipment/supply inventory. */
+@Serializable
+enum class InventoryCategory(val label: String) {
+    HARDWARE("Hive hardware"),
+    FRAMES("Frames & foundation"),
+    TOOLS("Tools"),
+    PROTECTIVE("Protective gear"),
+    FEED("Feed"),
+    TREATMENT("Treatment stock"),
+    PACKAGING("Jars & packaging"),
+    OTHER("Other"),
 }

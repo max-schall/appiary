@@ -55,8 +55,9 @@ import io.github.max_schall.appiary.data.entity.TreatmentEventEntity
         io.github.max_schall.appiary.data.entity.MedicineReceiptEntity::class,
         io.github.max_schall.appiary.data.entity.ColonyEventEntity::class,
         io.github.max_schall.appiary.data.entity.WeightEntryEntity::class,
+        io.github.max_schall.appiary.data.entity.InventoryItemEntity::class,
     ],
-    version = 6,
+    version = 7,
     exportSchema = true,
 )
 @TypeConverters(Converters::class)
@@ -78,6 +79,7 @@ abstract class AppiaryDatabase : RoomDatabase() {
     abstract fun medicineReceiptDao(): io.github.max_schall.appiary.data.dao.MedicineReceiptDao
     abstract fun colonyEventDao(): io.github.max_schall.appiary.data.dao.ColonyEventDao
     abstract fun weightDao(): io.github.max_schall.appiary.data.dao.WeightDao
+    abstract fun inventoryDao(): io.github.max_schall.appiary.data.dao.InventoryDao
 
     companion object {
         /** v1 → v2: location columns on seasonal_profiles (for location-derived seasons). */
@@ -153,13 +155,30 @@ abstract class AppiaryDatabase : RoomDatabase() {
             }
         }
 
+        /** v6 → v7: equipment/supply inventory. */
+        val MIGRATION_6_7 = object : androidx.room.migration.Migration(6, 7) {
+            override fun migrate(db: androidx.sqlite.db.SupportSQLiteDatabase) {
+                db.execSQL(
+                    "CREATE TABLE IF NOT EXISTS `inventory_items` (" +
+                        "`id` TEXT NOT NULL, `name` TEXT NOT NULL, `category` TEXT NOT NULL, " +
+                        "`quantity` REAL NOT NULL, `unit` TEXT, `lowStockThreshold` REAL, `notes` TEXT, " +
+                        "`createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+                )
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_inventory_items_category` ON `inventory_items` (`category`)")
+                db.execSQL("CREATE INDEX IF NOT EXISTS `index_inventory_items_name` ON `inventory_items` (`name`)")
+            }
+        }
+
         fun build(context: Context): AppiaryDatabase =
             Room.databaseBuilder(
                 context.applicationContext,
                 AppiaryDatabase::class.java,
                 "appiary.db",
             )
-                .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
+                .addMigrations(
+                    MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6,
+                    MIGRATION_6_7,
+                )
                 .build()
     }
 }

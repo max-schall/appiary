@@ -162,12 +162,18 @@
     <string name="settings_seasonal_desc">Scales inspection cadence and harvest-prep timing.</string>
     <string name="settings_display_hardware">Display &amp; hardware</string>
     <string name="settings_language">Language</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System</string>
     <string name="settings_dynamic_color">Use dynamic color (Android 12+)</string>
     <string name="settings_nfc_on">Enable NFC hive tags</string>
     <string name="settings_nfc_unavailable">NFC unavailable on this device</string>
     <string name="settings_backup">Backup &amp; restore</string>
     <string name="settings_export_json">Export JSON</string>
-    <string name="settings_export_csv">Export CSV</string>
+    <string name="settings_export_csv">Inspections CSV</string>
+    <string name="settings_export_csv_harvests">Harvests CSV</string>
+    <string name="settings_export_csv_inventory">Inventory CSV</string>
     <string name="settings_restore">Restore from JSON</string>
     <string name="settings_debug">Debug</string>
     <string name="settings_recompute">Recompute recommendations now</string>
@@ -451,4 +457,62 @@
     <string name="weigh_title">Log weight</string>
     <string name="weigh_label">Weight (kg)</string>
     <string name="timeline_weight">Weight</string>
+
+    <!-- Inventory -->
+    <string name="settings_inventory">Inventory</string>
+    <string name="settings_inventory_desc">Track equipment and supplies — boxes, frames, tools, feed, treatment stock, jars.</string>
+    <string name="inventory_open">Open inventory</string>
+    <string name="inventory_title">Inventory</string>
+    <string name="inventory_add">Add item</string>
+    <string name="inventory_edit">Edit item</string>
+    <string name="inventory_name">Name</string>
+    <string name="inventory_category">Category</string>
+    <string name="inventory_quantity">Quantity</string>
+    <string name="inventory_unit">Unit</string>
+    <string name="inventory_threshold">Low-stock alert at</string>
+    <string name="inventory_notes">Notes</string>
+    <string name="inventory_qty">%1$s %2$s</string>
+    <string name="inventory_increment">Increase</string>
+    <string name="inventory_decrement">Decrease</string>
+    <string name="inventory_low_chip">Low stock</string>
+    <string name="inventory_low_summary">%1$d item(s) low on stock</string>
+    <string name="inventory_empty_title">No inventory yet</string>
+    <string name="inventory_empty_subtitle">Add boxes, frames, tools, feed and other supplies to keep stock at a glance.</string>
+    <string name="action_delete">Delete</string>
+    <string name="invcat_hardware">Hive hardware</string>
+    <string name="invcat_frames">Frames &amp; foundation</string>
+    <string name="invcat_tools">Tools</string>
+    <string name="invcat_protective">Protective gear</string>
+    <string name="invcat_feed">Feed</string>
+    <string name="invcat_treatment">Treatment stock</string>
+    <string name="invcat_packaging">Jars &amp; packaging</string>
+    <string name="invcat_other">Other</string>
+
+    <!-- Queen events -->
+    <string name="queen_event_title">Log queen event</string>
+    <string name="queen_event_type">Event</string>
+    <string name="queen_event_status">Resulting status</string>
+    <string name="queen_mark_color">Marking colour</string>
+    <string name="queen_mark_suggested">This year\'s colour: %1$s</string>
+    <string name="queen_origin">Origin / breeder (optional)</string>
+    <string name="queenmark_white">White</string>
+    <string name="queenmark_yellow">Yellow</string>
+    <string name="queenmark_red">Red</string>
+    <string name="queenmark_green">Green</string>
+    <string name="queenmark_blue">Blue</string>
+
+    <!-- Global search -->
+    <string name="search_placeholder">Search everything</string>
+    <string name="search_hint_title">Search your records</string>
+    <string name="search_hint_subtitle">Find hives, inspection and treatment notes, tasks, harvests and inventory.</string>
+    <string name="search_empty_title">No matches</string>
+    <string name="search_empty_subtitle">Try a different word or a shorter term.</string>
+    <string name="searchkind_hive">Hive</string>
+    <string name="searchkind_inspection">Inspection</string>
+    <string name="searchkind_mite">Mite check</string>
+    <string name="searchkind_treatment">Treatment</string>
+    <string name="searchkind_feeding">Feeding</string>
+    <string name="searchkind_harvest">Harvest</string>
+    <string name="searchkind_task">Task</string>
+    <string name="searchkind_inventory">Inventory</string>
 </resources>

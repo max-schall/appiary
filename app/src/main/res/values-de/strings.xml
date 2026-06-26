@@ -149,12 +149,18 @@
     <string name="settings_seasonal_desc">Steuert Kontrollintervall und Erntevorbereitung.</string>
     <string name="settings_display_hardware">Anzeige &amp; Hardware</string>
     <string name="settings_language">Sprache</string>
+    <string name="settings_theme">Design</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="theme_system">System</string>
     <string name="settings_dynamic_color">Dynamische Farben (Android 12+)</string>
     <string name="settings_nfc_on">NFC-Tags aktivieren</string>
     <string name="settings_nfc_unavailable">NFC auf diesem Gerät nicht verfügbar</string>
     <string name="settings_backup">Sicherung &amp; Wiederherstellung</string>
     <string name="settings_export_json">JSON exportieren</string>
-    <string name="settings_export_csv">CSV exportieren</string>
+    <string name="settings_export_csv">Kontrollen-CSV</string>
+    <string name="settings_export_csv_harvests">Ernte-CSV</string>
+    <string name="settings_export_csv_inventory">Inventar-CSV</string>
     <string name="settings_restore">Aus JSON wiederherstellen</string>
     <string name="settings_debug">Debug</string>
     <string name="settings_recompute">Empfehlungen jetzt neu berechnen</string>
@@ -430,4 +436,62 @@
     <string name="weigh_title">Gewicht erfassen</string>
     <string name="weigh_label">Gewicht (kg)</string>
     <string name="timeline_weight">Gewicht</string>
+
+    <!-- Inventar -->
+    <string name="settings_inventory">Inventar</string>
+    <string name="settings_inventory_desc">Ausrüstung und Material verwalten — Zargen, Rähmchen, Werkzeug, Futter, Behandlungsmittel, Gläser.</string>
+    <string name="inventory_open">Inventar öffnen</string>
+    <string name="inventory_title">Inventar</string>
+    <string name="inventory_add">Artikel hinzufügen</string>
+    <string name="inventory_edit">Artikel bearbeiten</string>
+    <string name="inventory_name">Name</string>
+    <string name="inventory_category">Kategorie</string>
+    <string name="inventory_quantity">Menge</string>
+    <string name="inventory_unit">Einheit</string>
+    <string name="inventory_threshold">Warnung bei Bestand</string>
+    <string name="inventory_notes">Notizen</string>
+    <string name="inventory_qty">%1$s %2$s</string>
+    <string name="inventory_increment">Erhöhen</string>
+    <string name="inventory_decrement">Verringern</string>
+    <string name="inventory_low_chip">Niedriger Bestand</string>
+    <string name="inventory_low_summary">%1$d Artikel mit niedrigem Bestand</string>
+    <string name="inventory_empty_title">Noch kein Inventar</string>
+    <string name="inventory_empty_subtitle">Füge Zargen, Rähmchen, Werkzeug, Futter und weiteres Material hinzu, um den Bestand im Blick zu behalten.</string>
+    <string name="action_delete">Löschen</string>
+    <string name="invcat_hardware">Beutenmaterial</string>
+    <string name="invcat_frames">Rähmchen &amp; Mittelwände</string>
+    <string name="invcat_tools">Werkzeug</string>
+    <string name="invcat_protective">Schutzkleidung</string>
+    <string name="invcat_feed">Futter</string>
+    <string name="invcat_treatment">Behandlungsmittel</string>
+    <string name="invcat_packaging">Gläser &amp; Verpackung</string>
+    <string name="invcat_other">Sonstiges</string>
+
+    <!-- Königinnen-Ereignisse -->
+    <string name="queen_event_title">Königin-Ereignis erfassen</string>
+    <string name="queen_event_type">Ereignis</string>
+    <string name="queen_event_status">Status danach</string>
+    <string name="queen_mark_color">Zeichenfarbe</string>
+    <string name="queen_mark_suggested">Farbe dieses Jahres: %1$s</string>
+    <string name="queen_origin">Herkunft / Züchter (optional)</string>
+    <string name="queenmark_white">Weiß</string>
+    <string name="queenmark_yellow">Gelb</string>
+    <string name="queenmark_red">Rot</string>
+    <string name="queenmark_green">Grün</string>
+    <string name="queenmark_blue">Blau</string>
+
+    <!-- Globale Suche -->
+    <string name="search_placeholder">Alles durchsuchen</string>
+    <string name="search_hint_title">Einträge durchsuchen</string>
+    <string name="search_hint_subtitle">Finde Völker, Kontroll- und Behandlungsnotizen, Aufgaben, Ernten und Inventar.</string>
+    <string name="search_empty_title">Keine Treffer</string>
+    <string name="search_empty_subtitle">Versuche ein anderes Wort oder einen kürzeren Begriff.</string>
+    <string name="searchkind_hive">Volk</string>
+    <string name="searchkind_inspection">Kontrolle</string>
+    <string name="searchkind_mite">Milbenkontrolle</string>
+    <string name="searchkind_treatment">Behandlung</string>
+    <string name="searchkind_feeding">Fütterung</string>
+    <string name="searchkind_harvest">Ernte</string>
+    <string name="searchkind_task">Aufgabe</string>
+    <string name="searchkind_inventory">Inventar</string>
 </resources>

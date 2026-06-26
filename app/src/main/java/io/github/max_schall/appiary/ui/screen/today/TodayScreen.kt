@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.Insights
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -41,6 +42,7 @@ fun TodayScreen(
     onOpenHive: (String) -> Unit,
     onOpenRecordBook: (String) -> Unit,
     onOpenInsights: () -> Unit,
+    onOpenSearch: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: TodayViewModel = viewModel(factory = AppViewModelProvider.Factory),
 ) {
@@ -59,6 +61,12 @@ fun TodayScreen(
         TopAppBar(
             title = { Text(stringResource(R.string.nav_today)) },
             actions = {
+                IconButton(onClick = onOpenSearch) {
+                    Icon(
+                        Icons.Outlined.Search,
+                        contentDescription = stringResource(R.string.search_placeholder),
+                    )
+                }
                 IconButton(onClick = onOpenInsights) {
                     Icon(
                         Icons.Outlined.Insights,

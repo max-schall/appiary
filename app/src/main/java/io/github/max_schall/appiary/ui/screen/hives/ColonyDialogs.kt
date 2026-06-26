@@ -1,10 +1,15 @@
 package io.github.max_schall.appiary.ui.screen.hives
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.dp
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -22,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import io.github.max_schall.appiary.R
 import io.github.max_schall.appiary.data.entity.HiveEntity
+import io.github.max_schall.appiary.ui.i18n.labelRes
 import io.github.max_schall.appiary.ui.theme.Spacing
 
 /** Split this colony off into a new daughter hive. */
@@ -100,6 +106,151 @@ fun WeighDialog(
         },
         dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel)) } },
     )
+}
+
+/** Log a queen event (requeen, mark, supersedure, loss, …) for this hive. */
+@OptIn(
+    androidx.compose.material3.ExperimentalMaterial3Api::class,
+    androidx.compose.foundation.layout.ExperimentalLayoutApi::class,
+)
+@Composable
+fun QueenEventDialog(
+    onDismiss: () -> Unit,
+    onConfirm: (
+        event: io.github.max_schall.appiary.domain.model.QueenEventType,
+        status: io.github.max_schall.appiary.domain.model.QueenStatus,
+        markColor: io.github.max_schall.appiary.domain.model.QueenMarkColor?,
+        origin: String?,
+        notes: String?,
+    ) -> Unit,
+) {
+    var event by remember { mutableStateOf(io.github.max_schall.appiary.domain.model.QueenEventType.SEEN) }
+    var status by remember { mutableStateOf(defaultStatusFor(event)) }
+    var markColor by remember {
+        mutableStateOf<io.github.max_schall.appiary.domain.model.QueenMarkColor?>(null)
+    }
+    var origin by remember { mutableStateOf("") }
+    var notes by remember { mutableStateOf("") }
+    val suggested = remember { io.github.max_schall.appiary.domain.usecase.QueenMarking.colorForNow() }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(stringResource(R.string.queen_event_title)) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(Spacing.sm)) {
+                EnumDropdown(
+                    label = stringResource(R.string.queen_event_type),
+                    options = io.github.max_schall.appiary.domain.model.QueenEventType.entries,
+                    selected = event,
+                    optionLabel = { stringResource(it.labelRes()) },
+                    onSelect = { event = it; status = defaultStatusFor(it) },
+                )
+                EnumDropdown(
+                    label = stringResource(R.string.queen_event_status),
+                    options = io.github.max_schall.appiary.domain.model.QueenStatus.entries,
+                    selected = status,
+                    optionLabel = { stringResource(it.labelRes()) },
+                    onSelect = { status = it },
+                )
+                Text(
+                    stringResource(R.string.queen_mark_color),
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                androidx.compose.foundation.layout.FlowRow(
+                    horizontalArrangement = Arrangement.spacedBy(Spacing.xs),
+                ) {
+                    io.github.max_schall.appiary.domain.model.QueenMarkColor.entries.forEach { color ->
+                        androidx.compose.material3.FilterChip(
+                            selected = markColor == color,
+                            onClick = { markColor = if (markColor == color) null else color },
+                            leadingIcon = {
+                                androidx.compose.foundation.layout.Box(
+                                    Modifier
+                                        .size(16.dp)
+                                        .clip(androidx.compose.foundation.shape.CircleShape)
+                                        .background(androidx.compose.ui.graphics.Color(color.rgb))
+                                        .border(
+                                            1.dp,
+                                            MaterialTheme.colorScheme.outline,
+                                            androidx.compose.foundation.shape.CircleShape,
+                                        ),
+                                )
+                            },
+                            label = { Text(stringResource(color.labelRes())) },
+                        )
+                    }
+                }
+                Text(
+                    stringResource(R.string.queen_mark_suggested, stringResource(suggested.labelRes())),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                OutlinedTextField(
+                    value = origin,
+                    onValueChange = { origin = it },
+                    label = { Text(stringResource(R.string.queen_origin)) },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                OutlinedTextField(
+                    value = notes,
+                    onValueChange = { notes = it },
+                    label = { Text(stringResource(R.string.inventory_notes)) },
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = {
+                onConfirm(event, status, markColor, origin.ifBlank { null }, notes.ifBlank { null })
+            }) { Text(stringResource(R.string.action_save)) }
+        },
+        dismissButton = { TextButton(onClick = onDismiss) { Text(stringResource(R.string.action_cancel)) } },
+    )
+}
+
+/** Sensible default queen status implied by the event being logged. */
+private fun defaultStatusFor(
+    event: io.github.max_schall.appiary.domain.model.QueenEventType,
+): io.github.max_schall.appiary.domain.model.QueenStatus = when (event) {
+    io.github.max_schall.appiary.domain.model.QueenEventType.FAILED,
+    io.github.max_schall.appiary.domain.model.QueenEventType.LOST ->
+        io.github.max_schall.appiary.domain.model.QueenStatus.QUEENLESS
+    else -> io.github.max_schall.appiary.domain.model.QueenStatus.QUEENRIGHT
+}
+
+/** Small reusable enum picker built on ExposedDropdownMenuBox. */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@Composable
+private fun <T> EnumDropdown(
+    label: String,
+    options: List<T>,
+    selected: T,
+    optionLabel: @Composable (T) -> String,
+    onSelect: (T) -> Unit,
+) {
+    var open by remember { mutableStateOf(false) }
+    androidx.compose.material3.ExposedDropdownMenuBox(expanded = open, onExpandedChange = { open = it }) {
+        OutlinedTextField(
+            value = optionLabel(selected),
+            onValueChange = {},
+            readOnly = true,
+            label = { Text(label) },
+            trailingIcon = { androidx.compose.material3.ExposedDropdownMenuDefaults.TrailingIcon(expanded = open) },
+            modifier = Modifier
+                .menuAnchor(androidx.compose.material3.ExposedDropdownMenuAnchorType.PrimaryNotEditable)
+                .fillMaxWidth(),
+        )
+        ExposedDropdownMenu(expanded = open, onDismissRequest = { open = false }) {
+            options.forEach { option ->
+                androidx.compose.material3.DropdownMenuItem(
+                    text = { Text(optionLabel(option)) },
+                    onClick = { onSelect(option); open = false },
+                )
+            }
+        }
+    }
 }
 
 /** Merge this colony into one of the other hives in the apiary. */
